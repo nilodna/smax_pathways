@@ -3,6 +3,10 @@ import numpy as np
 import cartopy.crs as ccrs
 import xarray as xr
 import matplotlib.pyplot as plt
+import ast
+from collections import OrderedDict
+import cmocean as cm
+from matplotlib import colors as mcolors
 
 import cartopy.feature as cfeature
 from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
@@ -322,3 +326,188 @@ def add_observation_locations(ax, timerange, sanagu=False, argo=False, glider=Fa
         ax.scatter(ds_argo['LONGITUDE'], ds_argo['LATITUDE'], color=color, zorder=3, s=5)
         
     return ax
+
+
+#############################################################################################
+
+# function extracted from section-ctd by Dr. Dalton K. Sasaki
+def insert_stations_marker(ax, distance, ylim, kwargs, add_coast=0, scale_dist=1e3):
+    """
+    Insert markers on the top of the plot (if ylim is right).
+    The markers show the exact position of each station used to create the vertical section
+    passed in the ax argument. This function uses the distance and
+    depth variable on nc file given, creating a fake vertical array using the
+    first available depth (near the surface) of each section.
+
+    :params ax: matplotlib.Axes
+        Figure containing the vertical section.
+    :params nc: xarray.DataArray
+        DataArray with information of each station from a given section.
+    :params kwargs: dict
+        With arguments that will be used in the plt.scatter function.
+
+    :return ax:
+    """
+
+    # get the distance between each station
+    # distance = nc.dist.dropna('depSM').values[:,0] + add_coast
+    # get the first available depth near the surface and replicates with
+    # the same lenght of distance
+    # depth = np.ones(distance.shape) * (nc.depSM.values[0]/2)
+    depth = np.ones(distance.shape) * ylim
+
+    # in case kwargs is empty, fill with default configuration
+    if len(kwargs) == 0:
+        kwargs = {
+            'marker': 'v',
+            's': 10,
+            'color': 'red',
+            'zorder': 10,
+            'clip_on': False
+        }
+
+    # scatter
+    ax.scatter(distance/scale_dist, depth,**kwargs)
+
+    return ax
+
+#############################################################################################
+
+# function extracted from section-ctd by Dr. Dalton K. Sasaki
+def get_dict(fpath):
+    """Read a text file with a dictionary and returns
+    the dictionary
+
+    Args:
+        fpath (str): file path
+
+    Returns:
+        dict: dictionary in the text file
+    """    
+    file = open(fpath, 'r')
+    contents = file.read()
+    dictionary = ast.literal_eval(contents)
+    return dictionary
+
+
+def colorbarSigmaTS(varb=None, ref1=None, ref2=None, vmin=None, vmax=None, deltav=None, unified=True):
+    """Colorbar designed for sigma, temperature and salinity
+
+    Parameters
+    ----------
+    varb : string
+        variable selection
+    ref1 : float or int
+        first reference value in the colorbar
+    ref2 : float
+        second reference value in the colorbar
+    vmin : float
+        min desired value of the variable
+    vmax : float
+        max desired value of the variable
+    deltav : float
+        interval of value
+
+    Returns
+    ------
+        colormap
+
+    """
+    # ref1 = 18
+    # ref2 = 22
+    # vmin = 6
+    # vmax = 27.5
+    # deltav = 0.5
+    cbfraction = np.arange(vmin, vmax+deltav, deltav)
+    n = cbfraction.size
+    cbf1 = cbfraction <= ref1
+    cbf2 = (cbfraction < ref2) & (cbfraction > ref1)
+    cbf3 = (cbfraction >= ref2)
+
+    n1 = cbf1.sum()*10
+    n2 = (cbf2.sum()+1)*10
+    n3 = (cbf3.sum()-1)*10
+
+    if varb=='temperature':
+        # play with below values to create your own combination
+        c1 = plt.cm.RdBu(np.linspace(0.6, 1.0, num=n1))[::-1]
+        c2 = plt.cm.Greens(np.linspace(0.3, 1.0, num=n2))[::-1]
+        c3 = plt.cm.bwr(np.linspace(0.6, 1.0, num=n3))
+        # appending both matrixes above
+    elif varb=='salinity':
+        # play with below values to create your own combination
+        c1 = cm.cm.turbid(np.linspace(0.05, 0.5, num=n1))#[::-1]
+        c2 = plt.cm.RdBu(np.linspace(0.6, 1.0, num=n2))[::-1]
+        c3 = plt.cm.bwr(np.linspace(0.6, 1.0, num=n3))
+        # appending both matrixes above
+    elif varb=='sigma':
+        # play with below values to create your own combination
+        c1 = cm.cm.turbid(np.linspace(0.05, 0.5, num=n1))[::-1]
+        c2 = plt.cm.Greens(np.linspace(0.4, 1.0, num=n2))
+        c3 = plt.cm.RdBu(np.linspace(0.6, 1.0, num=n3))[::-1]
+        # appending both matrixes above
+    if unified:
+        colors = np.vstack((c1, c2, c3))
+        return mcolors.LinearSegmentedColormap.from_list('my_colormap', colors)
+    else:
+        cmaps = []
+        for i in zip([c1,c2,c3], ['c1', 'c2', 'c3']):
+            cmaps.append(mcolors.LinearSegmentedColormap.from_list(i[1], i[0]))
+        return cmaps
+
+
+def colordicts():
+    kwvarbs = OrderedDict({
+        "sal": {
+            # "var": 'sal00',
+            "var": 'sa',
+            "unit": "",
+            "vmin": 32.8,
+            "vmax": 38.2,
+            "deltav": 0.01,
+            "cmap": colorbarSigmaTS(varb='salinity',
+                    ref1=35, ref2=36, vmin=32.8, vmax=38.2, deltav=0.01),
+            "colorbar": {
+                'pt': r'Salinidade [g kg$^{-1}$]',
+                'en': r'Salinity [g kg$^{-1}$]',
+                },
+            "contour": [35, 36.]
+        },
+        "temp": {
+            "var": 't090C',
+            #"var": 'ct',
+            "unit": r'$^o$C',
+            "vmin": 6,
+            "vmax": 28,
+            "deltav": 0.01,
+            "cmap": colorbarSigmaTS(varb='temperature',
+                    ref1=18, ref2=22, vmin=6, vmax=28, deltav=0.01),
+            "colorbar": {
+                'pt': r'Temperatura [$^o$C]',
+                'en': r'Temperature [$^o$C]',
+                },
+            "contour": [18, 22]
+        },
+        'sigmaT': {
+            # "var": 'density00',
+            "var": 'rho_roquet2015',
+            "unit": r'kg m$^3$',
+            "vmin": 22,
+            "vmax": 28,
+            "deltav": 0.25,
+            "cmap": colorbarSigmaTS(varb='sigma',
+                    ref1=24.75, ref2=26, vmin=22, vmax=28, deltav=0.25),
+            "colorbar": {
+                'pt': r'$\sigma_T$ [kg m$^3$]',
+                'en': r'$\sigma_T$ [kg m$^3$]',
+                },
+            "contour": [24.75, 26]
+        },
+        "watermass":{
+        "var": {'salt': 'sal00',
+                'temp': 't090C'},
+        #"var": {'salt': 'sal',
+        #        'temp': 'ct'},
+        }
+    })
+    return kwvarbs
