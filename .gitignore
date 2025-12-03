@@ -1,0 +1,15 @@
+data/*.nc
+scripts/*.nc
+scripts/lagrangean/*.zarr
+scripts/lagrangean/*.nc
+
+
+**/__pycache__/
+**/.ipynb_checkpoints/
+**/dask-worker-space/
+data/**
+
+# removing ancillary folders
+scripts/modeling/
+scripts/section-ctd_dalton/
+repos/
