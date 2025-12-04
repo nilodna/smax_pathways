@@ -183,7 +183,7 @@ def _plot_one_track(ax, dsplot, theta, fix=False, ds_aviso=None, ds_locs=None,
     
 ################################################################################
 
-def compute_geostrophic_velocity(dsplot, theta, fix):  
+def compute_geostrophic_velocity(dsplot, theta, fix, adt=False):  
     """
     this function considers that at the surface the pressure is given by the sea surface anomaly (eta), so the geostrophic
     equation used is:
@@ -219,7 +219,12 @@ def compute_geostrophic_velocity(dsplot, theta, fix):
         dsplot_ = dsplot.copy(deep=True)
 
     lat,lon = dsplot_['latitude'].values, dsplot_['longitude'].values
-    eta = dsplot_['sla_filtered'].values
+    
+    if adt:
+        # if adt is activated, then use the sum of SLA and MDT to get the absolute dynamic topography
+        eta = (dsplot_['sla_filtered'] + dsplot_['mdt']).values
+    else:
+        eta = dsplot_['sla_filtered'].values
 
     # average distance between each observation, in meters
     dist = np.nanmean(gsw.distance(lon, lat))
@@ -337,7 +342,7 @@ def daily_geostrophic_current(day, tracks, ds_aviso=None, ds_locs=None, savefig=
 
 ################################################################################
 
-def _plot_single_day(ax, day, tracks, ds_aviso=None, ds_locs=None, 
+def _plot_single_day(ax, day, tracks, adt=False, ds_aviso=None, ds_locs=None, 
                      cbar_kwargs={'orientation': 'horizontal', 'location': 'bottom','pad': 0.03},
                      contourf_kwargs={"levels": np.arange(-0.5, 0.5, 0.01), "cmap": "RdBu_r"},
                      colors=None, transect=None, shelf=None):
@@ -364,7 +369,7 @@ def _plot_single_day(ax, day, tracks, ds_aviso=None, ds_locs=None,
         fix = tracks[day][sat]['fix']
 
         # add geostrophic current over the map
-        _ = add_geostrophic_velocity(ax, dsplot, theta, fix, 
+        _ = add_geostrophic_velocity(ax, dsplot, theta, fix, adt=adt,
                                      quiverkey=[-44.5, -22.2, 0.5, '0.5 m/s'],
                                      quiver_kwargs={"scale": 3.6, "units": "width", 
                                                     "width": .003, "color": "k"})
@@ -383,7 +388,7 @@ def add_aviso(ax, ds_aviso,
               cbar_kwargs={'orientation': 'horizontal', 'location': 'bottom','pad': 0.03}):
     
     # add contour/contourf
-    CS = ds_aviso.adt.plot.contour(ax=ax, 
+    CS = ds_aviso.sla.plot.contour(ax=ax, 
                                    x='longitude', 
                                    y='latitude', 
                                    levels=np.arange(0.3, 1., 0.05), 
@@ -410,13 +415,13 @@ def add_aviso(ax, ds_aviso,
 
 ################################################################################
 
-def add_geostrophic_velocity(ax, dsplot, theta, fix, 
+def add_geostrophic_velocity(ax, dsplot, theta, fix, adt=False,
                              quiverkey=[-45, -22.5, 0.5, '0.5 m/s'],
                              quiverkey_kws=dict(labelpos='S', color='k', coordinates='data'),
                              quiver_kwargs=dict(scale=5000, width=.003, color='k')):
     
     # calculations
-    lon, lat, ug, vg = compute_geostrophic_velocity(dsplot, theta, fix)
+    lon, lat, ug, vg = compute_geostrophic_velocity(dsplot, theta, fix, adt)
 
     # plot
     q = ax.quiver(lon, lat, ug, vg, **quiver_kwargs)
