@@ -10,14 +10,14 @@ import os.path as osp
 import xarray as xr
 
 # -- paths --#
-fsave = '../../project/data/treated'
+fsave = '../data/merge2'
 ftpstr = 'http://ftp.cptec.inpe.br/modelos/tempo/MERGE/GPM/DAILY'
 tag = 'RdI'
 
 # -- time period -- #
 tperiod = pd.date_range(start='2022-01-01', end='2022-04-01', freq='1D')
 
-bbox = {"longitude": slice(-50,-30), "latitude": slice(-30,-20)}
+bbox = {"longitude": slice(-50,-30), "latitude": slice(-30,-18)}
 
 # --  configure ftp paths -- #
 str_tmplt=f'{ftpstr}/%Y/%m/MERGE_CPTEC_%Y%m%d.grib2' # str template
