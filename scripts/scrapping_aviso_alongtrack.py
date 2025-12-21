@@ -8,8 +8,8 @@ from dask.distributed import Client, LocalCluster
 cluster = LocalCluster(n_workers=5) #number of cores
 client = Client(cluster) # go check dask dashboard
 
-# TODO: hide credentiais to send this script to github
-credentials = dict(user='dsilva1', passwd='M$rc@tor090872')
+# put your credentials here
+credentials = dict(user='user', passwd='passwd')
 
 def get_paths(base,satellite,years,months):
     years = np.array(years)
