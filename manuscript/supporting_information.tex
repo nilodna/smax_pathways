@@ -124,7 +124,7 @@
 %\includegraphics{agu_pubart-white_reduced.eps}
 
 
-\title{Supporting Information for Evidence of Synoptic Cross-shelf Pathways of Mid-depth Salinity Maximum Intrusions in the South Brazil Bight}
+\title{Supporting Information for Synoptic Pathways of Mid-depth Salinity Maximum Intrusions in the South Brazil Bight}
 %
 % e.g., \title{Supporting Information for "Terrestrial ring current:
 % Origin, formation, and decay $\alpha\beta\Gamma\Delta$"}
@@ -179,9 +179,24 @@
 % 4. any known imperfections or anomalies in the data.
 
 \noindent\includegraphics[width=\textwidth]{figures/00_manuscript_cross_geostrophic_new.png}
-\noindent\textbf{Figure S1.} Virtual along-shelf edge transect, with cross-shelf edge geostrophic velocities, in $m\ s^{-1}$. Blue (negative) values are shoreward and red (positive) offshoreward in (a). In (b), the temporal average of the cross-shelf edge geostrophic current is presented in blue, with the 2 standard deviation of the historical mean (between 1980 -- 2022) as vertical dashed gray line and the null velocity in vertical black line.
+\noindent\textbf{Figure S1.} (a) Location of the virtual along-shelf edge transect, represented by a straight line over the shelf edge. (b) time by latitude plot, with cross-shelf edge geostrophic velocities, in $m\ s^{-1}$. Blue (negative) values are shoreward and red (positive) offshoreward. The method description for this analysis is in Section 2.5.1.
+
+\newpage
+
+\noindent\includegraphics[width=\textwidth]{../figures/glorys12v1_selected_train_profiles.png}
+\noindent\textbf{Figure S2.} Vertical profiles of practical salinity extracted from the GLORYS12V1 reanalysis locations of interested (a-g), depicted in subpanel (h). The profiles are colored by the date of occurrence, from January to May of 2022. 
+
+\newpage
+\section{Lagrangian analysis - Forward propagation experiments}
+
+From our Lagrangian analysis, we have found that onlye particles released at north of the region of interest reach the shelf, via two pathways. To further investigate this advection, we used the FPN experiment to understand the relative importance of each pathway. To this end, we assumed that particles advected by the alongshelf pathway would reach the shelf area (a square box between Guanarabara and Cabo Frio, Figure S3) faster than those advected by a cross-shelf pathway. The rationale for this assumption is that the alongshelf pathway, associated with the BC non-meandering state, would provide a more direct route to the region of interest, whereas the cross-shelf pathway would involve more complex interactions with mesoscale features, such as eddies, potentially slowing transport. We have found that 31$\%$ of the particles that reached the shelf area did so within the first 10 days of the simulation, on average, covering an average cumulative distance of 335 $km$, suggesting they were likely advected along the shelf. In contrast, 21$\%$ of the particles reached the shelf area after 20 days on average, with a cumulative distance covered of 541 $km$, indicating they were likely transported via a cross-shelf pathway (Figure S3 a). The alongshelf pathway predominantly enters the region of interest through the eastern boundary (100$\%$), whereas the cross-shelf pathway particles enter through both the eastern (84$\%$) and southern (16$\%$) boundaries (Figure S3 b). Particles with a longer pathway spend significantly more time under high EKE activity than those particles with a fast advection (Mann-Whitney Test, p-value $<$ 0.001, Figure S3 c). We also run additional experiments releasing particles along the isopycnal, similar to BPII, but for forward propagation (not shown). The results were consistent with FPN, with particles reaching the shelf region only when released from the north, following both pathways described above.
+
+\noindent\includegraphics[width=\textwidth]{../figures/manuscript/00_manuscript_forwardLag_analysis.png}
+\noindent\textbf{Figure S3.} (a) Fast (blue) and slow (orange) regimes pathways of particles that entered the region of interest (dashed black square), for the experiment FPN only. Black dots indicate the location of the sequence of profiles selected on the main analysis. Note we have extended the region of interest further north to consider particles advected over the shelf and along the shelfbreak and south to consider the shelf break, since in this last case particles drifting along the shelf might be injected into the shelf. (b) Percentage of particles entering the region of interest through each boundary, computed considering only particles that effectively enter the box and separated by pathway, the colors follow the same from (a). (c) Fraction of time particles were found under high EKE activity for the fast  (left) and slow (right) regimes. The Mann-Whitney U-Test indicate particles on the slow regime are under eddy activity influence.
 
 %Repeat for any additional Supporting audio files
+\newpage
+\noindent\textbf{Video V1.}  Practical salinity horizontal fields from GLORYS12V1 (Jean-Michel et al., 2021) in colors, bathymetry from GEBCO2019 (Weatherall et al., 2015) is thin gray lines and 36 and 37.3 PSU isohalines in thicker black lines. (a) is the horizontal field at th 50-m layer and (b) is the salinity horizontal distribution projected onto the 25.5 kg m-3 isopycnal surface, with the selected profiles, presented in SectionXXX in the manuscript, in black scatters. The video presents the salinity evolution from January 1st to May 31st of 2022.
 
 %%% End of body of article:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -202,7 +217,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 
 %
-% \bibliography{<name of your .bib file>} do not specify file extension
+\bibliography{references} do not specify file extension
 %
 % no need to specify bibliographystyle
 %

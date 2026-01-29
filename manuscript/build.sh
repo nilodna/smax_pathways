@@ -39,5 +39,7 @@ done
 #    echo "PDF não encontrado! Algo deu errado na compilação."
 #fi
 
+# cp "main.pdf" "SmaxPathways_v3.pdf"
+
 echo "Build concluído!"
 

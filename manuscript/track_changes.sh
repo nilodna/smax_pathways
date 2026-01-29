@@ -1,15 +1,16 @@
 #!/bin/bash
 
 # Arquivos principais
-OLD_FILE="original_main.tex"
+OLD_FILE="original_main_v2.tex"
 NEW_FILE="main.tex"
-DIFF_FILE="diff.tex"
+DIFF="track_changes_SmaxPathways_v5"
+DIFF_FILE="$DIFF.tex"
 
 # PDF viewer (Linux: xdg-open, Mac: open, Windows: start)
 PDF_VIEWER="xdg-open"
 
 # Lista de arquivos auxiliares a limpar
-AUX_FILES=("diff.aux" "diff.log" "diff.bbl" "diff.blg" "diff.out" "diff.toc" "diff.lof" "diff.lot" "diff.fls" "diff.fdb_latexmk")
+AUX_FILES=("$DIFF.aux" "$DIFF.log" "$DIFF.bbl" "$DIFF.blg" "$DIFF.out" "$DIFF.toc" "$DIFF.lof" "$DIFF.lot" "$DIFF.fls" "$DIFF.fdb_latexmk")
 
 # Gerar arquivo com diferenças
 echo "Gerando arquivo de diferenças com latexdiff..."
@@ -18,7 +19,7 @@ latexdiff "$OLD_FILE" "$NEW_FILE" > "$DIFF_FILE"
 # Compilar diff.tex
 echo "Compilando diff.tex..."
 pdflatex "$DIFF_FILE"
-bibtex diff
+bibtex "$DIFF.aux"
 pdflatex "$DIFF_FILE"
 pdflatex "$DIFF_FILE"
 
