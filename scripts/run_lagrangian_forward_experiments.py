@@ -141,7 +141,7 @@ experiments_cmems = {
     "smax_from_north_cmems": {
                 'fname': '../data/glorys/glorys_current_*.nc',
                 'outfile': '../data/lagrangean/smax_from_north_cmems.zarr',
-                'center_launch': [-40, -22],
+                'center_launch': [-40, -22], #[-39, -19]
                 'launch_depth': 50,
                 'time': datetime(2022,1,1),
                 'poolSize': 0.5,
@@ -163,7 +163,7 @@ experiments_cmems = {
                 'run3D': True
                 },
     "smax_from_east_cmems_isopycnal": {
-                'fname': '../data/glorys/glorys_isopycnal25.5.nc',
+                'fname': '../data/glorys/glorys_isopycnal25.5__longer.nc',
                 'outfile': '../data/lagrangean/smax_from_east_cmems_isopycnal.zarr',
                 'center_launch': [-39, -26.5],
                 'launch_depth': None,
@@ -175,9 +175,9 @@ experiments_cmems = {
                 'run3D': False
                 },
     "smax_from_north_cmems_isopycnal": {
-                'fname': '../data/glorys/glorys_isopycnal25.5.nc',
+                'fname': '../data/glorys/glorys_isopycnal25.5__longer.nc',
                 'outfile': '../data/lagrangean/smax_from_northt_cmems_isopycnal.zarr',
-                'center_launch': [-40, -22],
+                'center_launch': [-40, -22], #[-40, -22],
                 'launch_depth': None,
                 'time': datetime(2022,1,2),
                 'poolSize': 0.5,
@@ -191,7 +191,7 @@ experiments_aviso = {
     "smax_from_north_aviso": {
                 'fname': '../data/dataset-duacs-nrt-global-merged-allsat-phy-l4_20220101_20220401.nc',
                 'outfile': '../data/lagrangean/smax_from_north_aviso.zarr',
-                'center_launch': [-40, -22],
+                'center_launch': [-39, -19], #[-40, -22],
                 'launch_depth': None,
                 'time': datetime(2022,1,1),
                 'poolSize': 0.5,
@@ -217,7 +217,8 @@ experiments = {**experiments_cmems, **experiments_aviso}
 
 
 # running 2D experiments
-exp2D = ['smax_from_north_aviso', 'smax_from_east_aviso']
+exp2D = ['smax_from_north_aviso', 'smax_from_east_aviso', 'smax_from_east_cmems_isopycnal', 'smax_from_north_cmems_isopycnal']
+# exp2D = ['smax_from_north_aviso', 'smax_from_north_cmems_isopycnal']
 
 for exp in exp2D:
     days_to_run = (datetime(2022,4,1) - experiments[exp]['time']).days
