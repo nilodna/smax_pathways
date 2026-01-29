@@ -163,7 +163,7 @@ experiments_cmems = {
                 'run3D': True
                 },
     "smax_from_east_cmems_isopycnal": {
-                'fname': '../data/glorys/glorys_isopycnal25.5.nc',
+                'fname': '../data/glorys/glorys_isopycnal25.5__longer.nc',
                 'outfile': '../data/lagrangean/smax_from_east_cmems_isopycnal.zarr',
                 'center_launch': [-39, -26.5],
                 'launch_depth': None,
@@ -175,9 +175,9 @@ experiments_cmems = {
                 'run3D': False
                 },
     "smax_from_north_cmems_isopycnal": {
-                'fname': '../data/glorys/glorys_isopycnal25.5.nc',
+                'fname': '../data/glorys/glorys_isopycnal25.5__longer.nc',
                 'outfile': '../data/lagrangean/smax_from_northt_cmems_isopycnal.zarr',
-                'center_launch': [-39, -19], #[-40, -22],
+                'center_launch': [-40, -22], #[-40, -22],
                 'launch_depth': None,
                 'time': datetime(2022,1,2),
                 'poolSize': 0.5,
@@ -217,26 +217,26 @@ experiments = {**experiments_cmems, **experiments_aviso}
 
 
 # running 2D experiments
-# exp2D = ['smax_from_north_aviso', 'smax_from_east_aviso', 'smax_from_east_cmems_isopycnal', 'smax_from_north_cmems_isopycnal']
+exp2D = ['smax_from_north_aviso', 'smax_from_east_aviso', 'smax_from_east_cmems_isopycnal', 'smax_from_north_cmems_isopycnal']
 # exp2D = ['smax_from_north_aviso', 'smax_from_north_cmems_isopycnal']
 
-# for exp in exp2D:
-#     days_to_run = (datetime(2022,4,1) - experiments[exp]['time']).days
+for exp in exp2D:
+    days_to_run = (datetime(2022,4,1) - experiments[exp]['time']).days
     
-#     fieldset, pset = set_running(**experiments[exp])
+    fieldset, pset = set_running(**experiments[exp])
     
-#     output_file = pset.ParticleFile(name=experiments[exp]['outfile'], 
-#                                     outputdt=timedelta(hours=6))
+    output_file = pset.ParticleFile(name=experiments[exp]['outfile'], 
+                                    outputdt=timedelta(hours=6))
     
-#     pset.execute(AdvectionRK4,
-#                  runtime=timedelta(days=days_to_run),
-#                  dt=timedelta(minutes=5),
-#                  output_file=output_file,
-#                  verbose_progress=False,
-#                  recovery={ErrorCode.ErrorOutOfBounds: DeleteParticle})
+    pset.execute(AdvectionRK4,
+                 runtime=timedelta(days=days_to_run),
+                 dt=timedelta(minutes=5),
+                 output_file=output_file,
+                 verbose_progress=False,
+                 recovery={ErrorCode.ErrorOutOfBounds: DeleteParticle})
 
 # running 3D experiments
-exp3D = ['smax_from_north_cmems'] #, 'smax_from_east_cmems']
+exp3D = ['smax_from_north_cmems', 'smax_from_east_cmems']
 
 for exp in exp3D:
     days_to_run = (datetime(2022,4,1) - experiments[exp]['time']).days
