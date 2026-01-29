@@ -13,3 +13,12 @@ data/**
 scripts/modeling/
 scripts/section-ctd_dalton/
 repos/
+
+figures/supplementary_movie/*
+figures/*.mp4
+
+manuscript/SmaxPathways_v*.pdf
+manuscript/track_changes_SmaxPathways_v*.tex
+manuscript/track_changes_SmaxPathways_v*.pdf
+manuscript/SmaxPathways_v*.tex
+settings.json
