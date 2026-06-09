@@ -1,0 +1,532 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUJournalTemplate.tex: this template file is for articles formatted with LaTeX
+%
+% This file includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements, including customized APA reference formatting.
+%
+% You may copy this file and give it your
+% article name, and enter your text.
+%
+% guidelines and troubleshooting are here: 
+
+%% To submit your paper:
+\documentclass[draft]{agujournal2019}
+\usepackage{url} %this package should fix any errors with URLs in refs.
+\usepackage{lineno}
+\usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
+\usepackage{soul}
+\usepackage{multirow} % add this in your preamble
+\usepackage{bigdelim} % for curly braces in tables
+
+\usepackage{soul}
+
+% \usepackage{hyperref}
+
+\linenumbers
+%%%%%%%
+% As of 2018 we recommend use of the TrackChanges package to mark revisions.
+% The trackchanges package adds five new LaTeX commands:
+%
+%  \note[editor]{The note}
+%  \annote[editor]{Text to annotate}{The note}
+%  \add[editor]{Text to add}
+%  \remove[editor]{Text to remove}
+%  \change[editor]{Text to remove}{Text to add}
+%
+% complete documentation is here: http://trackchanges.sourceforge.net/
+%%%%%%%
+
+% \draftfalse
+
+%% Enter journal name below.
+%% Choose from this list of Journals:
+%
+% JGR: Atmospheres
+% JGR: Biogeosciences
+% JGR: Earth Surface
+% JGR: Oceans
+% JGR: Planets
+% JGR: Solid Earth
+% JGR: Space Physics
+% Global Biogeochemical Cycles
+% Geophysical Research Letters
+% Paleoceanography and Paleoclimatology
+% Radio Science
+% Reviews of Geophysics
+% Tectonics
+% Space Weather
+% Water Resources Research
+% Geochemistry, Geophysics, Geosystems
+% Journal of Advances in Modeling Earth Systems (JAMES)
+% Earth's Future
+% Earth and Space Science
+% Geohealth
+%
+% ie, \journalname{Water Resources Research}
+
+\journalname{JGR: Oceans}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  TITLE
+%
+% (A title should be specific, informative, and brief. Use
+% abbreviations only if they are defined in the abstract. Titles that
+% start with general keywords then specific terms are optimized in
+% searches)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Example: \title{This is a test title}
+
+\title{Synoptic Pathways of Mid-depth Salinity Maximum Intrusions in the South Brazil Bight}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Authors are individuals who have significantly contributed to the
+% research and preparation of the article. Group authors are allowed, if
+% each author in the group is separately identified in an appendix.)
+
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses).
+
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}}
+
+\authors{D. A. Silva\affil{1}, A. Gangopadhyay\affil{2}, D. K. Sasaki\affil{1,3}, M. Dottori\affil{1}, I. C. A. da Silveira\affil{1}, W. C. Belo\affil{4}, R. P. Martins\affil{4}}
+
+\affiliation{1}{Instituto Oceanogr\'{a}fico, Universidade de Sao Paulo, Praca do Oceanogr\'{a}fico, 191 - SP 05508-120, S\~{a}o Paulo, Brasil}
+
+\affiliation{2}{School for Marine Sciences and Technology, University of Massachusetts, 836 South Rodney French Blvd, New Bedford, MA 02744-1221}
+
+\affiliation{3}{Department of Marine and Environmental Sciences, Northeastern University, 430 Nahant Rd, Nahant, MA 01908}
+
+\affiliation{4}{Centro de Pesquisas, Desenvolvimento e Inova\c{c}\~{a}o Leopoldo Am\'{e}rico Miguez de Mello - CENPES/PETROBRAS, Av. Hor\'{a}cio Macedo, 950 - Cidade Universit\'{a}ria da Universidade Federal do Rio de Janeiro, Rio de Janeiro - RJ, 21941-915}
+
+%(repeat as many times as is necessary)
+
+
+% Corresponding author mailing address and e-mail address:
+
+% (include name and email addresses of the corresponding author.  More
+% than one corresponding author is allowed in this LaTeX file and for
+% publication; but only one corresponding author is allowed in our
+% editorial system.)
+
+% Example: \correspondingauthor{First and Last Name}{email@address.edu}
+
+\correspondingauthor{Danilo Silva}{danilo2.silva@usp.br}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% KEY POINTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  List up to three key points (at least one is required)
+%  Key Points summarize the main points and conclusions of the article
+%  Each must be 140 characters or fewer with no special characters or punctuation and must be complete sentences
+
+% Example:
+% \begin{keypoints}
+% \item	List up to three key points (at least one is required)
+% \item	Key Points summarize the main points and conclusions of the article
+% \item	Each must be 140 characters or fewer with no special characters or punctuation and must be complete sentences
+% \end{keypoints}
+
+\begin{keypoints}
+\item Salinity Maximum intrusions (\textit{$S_{max}$}) in the South Brazil Bight (SBB) are remotely advected from north of SBB, where the signals originate.
+\item Brazil Current interacting with Cabo Frio Eddy was the main mechanism advecting \textit{$S_{max}$} towards the shelf and wind injected them into the shelf
+\item An enhancement by eddy dipole interaction and advection through a non-meandering Brazil Current are also identified as secondary processes.
+\end{keypoints}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  ABSTRACT and PLAIN LANGUAGE SUMMARY
+%
+% A good Abstract will begin with a short description of the problem
+% being addressed, briefly describe the new data or analyses, then
+% briefly states the main conclusion(s) and how they are supported and
+% uncertainties.
+
+% The Plain Language Summary should be written for a broad audience,
+% including journalists and the science-interested public, that will not have 
+% a background in your field.
+%
+% A Plain Language Summary is required in GRL, JGR: Planets, JGR: Biogeosciences,
+% JGR: Oceans, G-Cubed, Reviews of Geophysics, and JAMES.
+% see http://sharingscience.agu.org/creating-plain-language-summary/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% \begin{abstract} starts the second page
+\begin{abstract}
+Cross-shelf exchanges play a crucial role in distributing heat, salt, and biogeochemical properties between the continental shelf and the open ocean. Among the processes shaping these exchanges, the intrusion of warm and salty waters (mid-depth Salinity Maximum, \textit{$S_{max}$}) remains poorly understood in the South Brazil Bight (SBB). We present observational evidence of \textit{$S_{max}$} intrusions in the Northeastern SBB (NE-SBB) based on hydrographic observations collected between February and March 2022. Using a multi-platform observational dataset combined with Lagrangian particle tracking, we show that \textit{$S_{max}$} originate north of the study region and were advected southward primarily by the Brazil Current (BC). Two dominant advective pathways are identified: (i) a southwestward along-shelf route associated with a non-meandering BC, and (ii) a cross-shelf pathway driven by the interaction between the BC meander and the cyclonic Cabo Frio Eddy that is intensified by the presence of an eddy dipole. Once \textit{$S_{max}$} reaches the shelf break, its penetration onto the continental shelf is controlled wind-driven, mid=depth onshore counterflow during upwelling-favorable conditions, as suggested by the Burger number analysis higher than 1. These results highlight a two-step mechanism for \textit{$S_{max}$} intrusions in the NE-SBB, where mesoscale dynamics govern remote delivery to the shelf edge, while wind-driven circulation and stratification regulate onshore penetration and vertical structure. By elucidating the pathways and mechanisms of \textit{$S_{max}$} intrusions, this study advances the understanding of cross-shelf exchanges in the SBB and emphasize the importance of remotely forced processes in shaping the thermodynamics and biogeochemistry of subtropical continental shelves.
+\end{abstract}
+
+\section*{Plain Language Summary}
+In this study, we investigate how warm and salty subsurface waters, known as Salinity Maximum intrusions (\textit{$S_{max}$}), reach the continental shelf in the South Brazil Bight (SBB). Using observations from February–March 2022 and numerical tracking of water parcels, we show that these waters originate north of the study region and are transported southward by the Brazil Current. Two main pathways are identified: a southwestward along-shelf route under a smooth Brazil Current regime, and a cross-shelf pathway driven by the interaction between the Brazil Current and a rotating ocean feature called the Cabo Frio Eddy, which can be intensified by interacting with another eddy rotating in the opposite direction. Once at the shelf edge, wind-driven currents during upwelling-favorable conditions promote subsurface onshore transport. Together, these results reveal a two-step mechanism in which mesoscale ocean features deliver salty waters to the shelf break, and wind-driven circulation carries them onto the continental shelf, with important implications for coastal stratification, nutrient supply, and marine productivity in the SBB.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  BODY TEXT
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+\label{sec:introduction}
+
+Cross-shelf exchanges are critical processes that influence the distribution of heat, salt, pollutants \cite{brink2016} and biogeochemical properties \cite{liu2010carbon,cossarini2015continental} between the continental shelf and the open ocean. Western boundary currents (WBCs), such as the Brazil Current (BC), play an important role in these exchanges because of their dynamic nature and the transport of warm, saline waters poleward along the western margins of ocean basins. 
+
+The Northeastern South Brazil Bight (NE-SBB, Figure~\ref{fig:study_area}) exhibits a secondary maximum of eddy kinetic energy (EKE) in the South Atlantic Basin \cite<refer to Figure 1 from >{rocha2022}. This elevated EKE is related to the recurrent presence of cyclonic eddies generated off Cabo Frio (Cabo Frio Eddy, CFE) and Cabo de São Tomé (Cabo de São Tomé Eddy, CTE) \cite{uchoa2023,silveira2023}. The generation of these eddies results from the topographic interactions of the poleward BC and the equatorward Intermediate Western Boundary Current \cite{luko2022}. The development of meanders and cyclonic eddies influences cross-shelf exchanges \cite{calil2021,combes2023circulation}, in addition to wind-driven cross-shelf circulation \cite{castro2014summer,brink2016}. The on-shelf outcome of these processes over the shelf edge leads to the development of thermohaline intrusions, that is, inversions of temperature and salinity \cite{ruddick-kerr2003}. Although such structures may appear gravitationally unstable, the opposing effects of temperature and salinity on seawater density frequently compensate, allowing intrusions to remain neutrally buoyant \cite{Stern1967}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/00_manuscript_study_area_extended.png}
+    \caption{(a) Northeastern South Brazil Bight (NE-SBB) with observational locations in orange representing CTD profiles; red and black represent ARGO profiles along Line A1 (3901549) and Line A2 (3901225), respectively; the continuous black line represents the Slocum Glider SG19 track depicting the Cabo Frio Eddy (CFE); white dots represent the starting point of the ARGOS and Glider's path, the red line represents the along-shelf-edge transect used for cross-shelf velocity calculations. The bathymetric data, marked in color, were extracted from the GEBCO 2019 dataset \protect \cite{weatherall2015new}, and the contours represent the -100, -200, -1000, -2000, -4000, and -5000 m isobaths. (b) highlights a specific part of the glider's path in which a loop was performed. The orange and blue dots are two specific profiles measured during the glider's path. (c) Sample absolute salinity profile showing the salinity maximum (\textit{$S_{max}$}) characteristics: $ZS_{max}$ is the depth of the \textit{$S_{max}$}; $Z_{T}$ and $Z_{B}$ are the depths of the top and bottom boundaries, respectively; and $thickness$ is the difference between them. The \textit{$S_{max}$} characteristics were extracted based on the adaptations of the \protect\citeA{Lentz2003} algorithm of \protect\citeA{silva2023inventory}.}
+    \label{fig:study_area}
+\end{figure}
+
+Thermohaline intrusions can be observed near the bottom, which influence the region by injecting cold and nutrient rich waters (South Atlantic Central Water, SACW) onto the shelf, thus increasing primary productivity and atmospheric CO$_2$ sequestration \cite{oliveira2019first}. However, recent studies have shown a separate intrusion occurring at mid-depth levels that injects warm and salty water onto the shelf \cite<Tropical Water, TW,>{Campos2000,castro2014summer,silva2023inventory}. These intrusions, defined as a peak in subsurface salinity and often called salinity maximum intrusions \cite<hereinafter referred to as $S_{max}$, >{Gordon1981}, sometimes even block the pathway between the nutrient rich waters near the bottom and the euphotic zone \cite{silva2023inventory,dottori2023}, thus affecting the biogeochemical properties of the shelf and the transport of larvae from the ocean \cite{Namiki2017,vilanova2026water}. These mid-depth salinity maximums, \textit{$S_{max}$}, are generally observed to be associated with seasonal pycnocline \cite{Lentz2003,silva2023inventory} and are responsible for the injection of salt onto the shelf. For example, on the Middle Atlantic Bight (MAB, a shelf region of the North Atlantic along the U.S. east coast), \textit{$S_{max}$} drives the onshore salt flux, providing half of what is necessary to balance the freshwater input and maintain the annual average salinity in the region \cite{Gordon1981}. 
+
+Although thermohaline intrusions are linked to several mechanisms, such as wind- and eddy-driven circulation \cite{Gawarkiewicz1990,GonzalezPola2007,Ruiz2019,Li2012,Malan2020,silver2023increased,gawarkiewicz2025mapping}, internal waves \cite{Hopkins2012} and baroclinic pressure gradients \cite{Posmentier1978FineFront,Aikman1984}, the drivers of \textit{$S_{max}$} intrusions are still unresolved in the South Brazil Bight (SBB). Considering the dominance of eddies and wind in shaping cross-shelf exchanges \cite{combes2021circulation,calil2021,combes2023circulation}, one might expect that both processes play an important role in developing them. In this study, we investigate the interaction between the dynamics of BC and its eddying meanders and wind-driven circulation and how they might help advect \textit{$S_{max}$} from remote offshore regions all the way to the NE-SBB (Figure~\ref{fig:study_area}). This investigation is motivated by the observation of multiple \textit{$S_{max}$} events advected towards the NE-SBB in March 2022, when the last cruises of the Santos Project - Santos Basin Environmental Characterization - coordinated by PETROBRAS \cite{moreira2023multidisciplinary} were conducted. The set of sampling cruises was named SANAGU2022.
+
+Here we present observational evidences that the features found during the campaigns were remotely advected from offshore locations onto the NE-SBB. The sources and pathways of these \textit{$S_{max}$} signals were investigated using satellite observations, global reanalysis (GLORYS12V1) and Lagrangian analysis. The manuscript is structured as follows: Section 2 describes the dataset used and methods applied; Section 3 presents our results and show preferential \textit{$S_{max}$} pathways of advection; Section 4 discusses the interaction between BC dynamics and wind and presents a set of Lagrangian analysis to aid in interpreting the advective pathways and; Section 5 summarizes our main findings. 
+
+\section{Material and Methods}
+\label{section:methods}
+
+\subsection{Hydrographic Dataset}
+\label{subsec:hydro_dataset}
+In this study, we use a diverse set of data from several sources, including in situ measurements, remotely sensed products and global numerical reanalysis (as summarized in Table~\ref{tab:dataset}). 
+
+The SANAGU2022 sampling was carried out in March 2022, sampling the entire South Brazil Bight, as described in \citeA{moreira2023multidisciplinary}. Although multiple transects were made on the NE-SBB during the cruise, in this work we only considered the central transect, off Guanabara Bay (Figure~\ref{fig:study_area}, orange markers), as intrusions were only observed along this transect. The transect was sampled twice in 2 weeks: the first sample occurred between 5 and 14 March, and the second was performed between 23 and 28 March. CTD profiles measurements were taken with SBE 911 Plus probe, with stations aligned approximately perpendicular to the coast (orange dashed line in Figure~\ref{fig:study_area}). Quality control and processing methods were applied using a modified version of the Python-CTD package \cite{Fernandes2014,dottori2023}. In the processing workflow, we removed spikes, averaged the data into 1 $m$ bin, and applied a 7-point (21-point) window Hanning filter to smooth the profiles over the shelf (slope). This processing is similar to the one applied by \citeA{silva2023inventory} and \citeA{dottori2023} on the same continental shelf and by \citeA{silveira2023} for the slope casts.
+
+\begin{table}
+\caption{Overview of the observational datasets used in this study, specifying the source (institution, product name, or reference), extracted variables, and analysis periods. ADT denotes Absolute Dynamic Topography.}
+\label{tab:dataset}
+\centering
+\begin{tabular}{l c c c}
+\hline
+ \textbf{Dataset} & \textbf{Reference} & \textbf{Variables} & \textbf{Period} \\
+\hline
+        CTD           & \citeA{moreira2023multidisciplinary} & T,S & Mar, 2022 \\ 
+        ARGO          & \citeA{argo_gdac} & T,S & Jan--Mar, 2022 \\ 
+        Glider        & \citeA{projetoazul2015} & T,S & Feb--Mar, 2022 \\ 
+        AVISO         & \citeA{aviso_cmems} & Gridded ADT & \rdelim\}{7}{*}[Jan--Mar, 2022] \\ 
+        AVISO         & \citeA{aviso_cmems_ssh_at} & Along track ADT &  \\ 
+        ERA5          & \citeA{hersbach2018era5} & Wind stress &  \\ 
+        GLORYS12V1    & \citeA{jean2021glorys} & u,v,T,S &  \\ 
+        MERGE         & \citeA{rozante2010combining} & Precipitation &  \\ 
+        AVHRR         & - & SST &  \\ 
+        META3.1exp DT & \citeA{pegliasco2022} & Eddie track(x,y,t) &  \\ 
+\hline
+\end{tabular}
+\end{table}
+
+We used ARGO float profiles and a Slocum Glider dataset to complement the CTD dataset and provide a broader spatial and temporal context for the observed \textit{$S_{max}$} intrusions. The temporal and spatial filtering of the dataset resulted in two ARGO profilers: 3901549 and 3901225, defined hereafter as A1 and A2, respectively (Figure~\ref{fig:study_area}). From these instruments, we extracted profiles with a quality flag of 1 or 2, indicating "good data" or "probably good data" \cite{notarstefano2020argo}. The Glider dataset was obtained at the ProjetoAzul portal (\url{http://www.projetoazul.eco.br/}, accessed in May 2023). The metadata available within the dataset presents quality control, which was used to select the information quality flag 0, meaning "good data". Hydrographic properties, such as absolute salinity,  potential density and Brunt-Vaisalla frequency, from all vertical profiles were derived from in situ measurements, using the Gibbs SeaWater (GSW) oceanographic toolbox of Thermodynamic Equation of SeaWater 2010 \cite<TEOS-10, >{mcdougall2011gsw} through the GSW Python package \cite{firing2021gsw}.
+
+\subsection{Characteristics of Salinity Maximum intrusions}
+\label{sec:smax_structure}
+
+An algorithm of salinity intrusions \cite{Lentz2003} adapted for the SBB thermodynamics \cite{silva2023inventory} provided the intrusion characteristics used in this work. These characteristics are illustrated in Figure~\ref{fig:study_area} c. The maximum salinity is defined as \textit{$S_{max}$} and its corresponding vertical position is $ZS_{max}$. The profile is only defined as a \textit{$S_{max}$} event when the vertical gradient ($\Delta{S}$) exceeds the threshold of $0.1 g\ kg^{-1}$, following \citeA{silva2023inventory}. The vertical limits ($Z_{T}$ and $Z_{B}$) were defined as the depth at which salinity decreases to 75\% of its vertical range relative to the peak value, considering the range between the maximum salinity and the lowest salinity observed in the upper or lower layer. From thes limits, we only calculated the thickness of the \textit{$S_{max}$}, but we acknowledge it is also possible to extract other useful characteristics. For further description of the adaptations, the reader is referred to \citeA{silva2023inventory}. Here, we define \textit{$S_{max}$} signal for the features found in open ocean and \textit{$S_{max}$} intrusion for those found within the continental shelf.
+
+\subsection{Altimeter Dataset}
+Sea surface elevation and geostrophic velocities derived from a global altimeter product complement our analysis. These datasets are available on the Copernicus Marine Environment Monitoring Service (CMEMS) website. Here, we used both L4 grid products \cite{cmems_l4_ssh_nrt} and L3 along track altimeter data \cite{cmems_l3_ssh_reprocessed} to reconstruct mesoscale scenarios. The gridded absolute dynamic topography (ADT) product has a 0.25$^o$ spatial resolution at daily frequency and merges data from all available altimeter missions, using an optimal interpolation to construct the final product. Zonal and meridional geostrophic currents were calculated based on geostrophic balance (Equations~\ref{eq:geostrophic_a} and~\ref{eq:geostrophic_b}). Along track altimeter was used to compute geostrophic velocity normal to the track, which allows the visualization  of mesoscale features with higher resolution. This technique provides velocities with an average resolution of 7 $km$ and was recently applied to investigate the dynamics of the Gulf Stream and its relation to intrusions of salinity maximum in this region \cite{silver2022spatial}. We selected tracks that crossed relevant features, such as the Brazil Current and eddy dipoles present on the continental slope of SBB during February and March of 2022 resulting in a total of 19 tracks (see Figure~\ref{fig:geostrophic_fields}). Cross-track velocities ($U_{ct}$) were calculated using ADT fields along the track using Equation \ref{eq:geostrophic_c}.
+
+\begin{linenomath*}
+
+\begin{equation}
+\label{eq:geostrophic_a}
+U_{g}  = - \frac{g}{f} \frac{\Delta{ADT}}{\Delta y} {\textit{(- gridded ADT)}}
+\end{equation}
+
+\begin{equation}
+\label{eq:geostrophic_b}
+V_{g}  = \frac{g}{f} \frac{\Delta{ADT}}{\Delta x} {\textit{(- gridded ADT)}}
+\end{equation}
+
+\begin{equation}
+\label{eq:geostrophic_c}
+U_{ct}  = - \frac{g}{f} \frac{\Delta{ADT}}{\Delta s} {\textit{(- track ADT)}}
+\end{equation}
+\end{linenomath*}
+
+where, $g$ is the acceleration of gravity, $f$ is the Coriolis parameter and '$\Delta s$' is the spatial resolution of the grid along the path ($\approx 7 km$).
+
+The Mesoscale Eddy Trajectories Atlas multi-satellite delayed-time product \cite<META3.1exp, >{pegliasco2022} allowed us to explore the eddy activity during the period. This dataset provides the position, speed, amplitude and other information about the eddies, detected with the py-eddy tracker algorithm \cite{mason2014new} applied over the absolute dynamic topography (ADT) of the gridded AVISO product. This dataset was filtered to select cyclones and anticyclones from January to March, 2022, over the domain of interest.
+
+
+\subsection{Additional Datasets}
+To provide context on the meteo-oceanographic conditions, several datasets were used to complement the ones described in previous sections. Sea surface temperature (SST) data were obtained from the Advanced Very High Resolution Radiometer (AVHRR) Level 3 dataset, with a 4-km resolution at daily frequency \cite{saha2018avhrr}. Precipitation was retrieved from the MERGE dataset \cite{rozante2010combining}, which combines satellite precipitation data from the Tropical Rainfall Measuring Mission (TRMM) with surface observations from meteorological stations over the South American continent. This product results in maps of daily accumulated precipitation with a 12-km spatial resolution. The meteorological conditions were also analyzed using hourly wind stress at the surface, retrieved from the fifth generation reanalysis \cite<ERA5 hereafter, >{hersbach2018era5} , provided by the European Center for Medium-range Weather Forecasts (ECMWF). This dataset has a 0.25$^o$ resolution and combines numerical model results and observations from satellites, buoys and meteorological stations via data assimilation \cite{hersbach2018era5}. We used currents (zonal and meridional), temperature and salinity from daily averages of the 1/12$^o$ Global Ocean Physics Reanalysis \cite<GLORYS12V1; >{jean2021glorys} to explore the advection of subsurface high salinity features. GLORYS12V1 assimilates reprocessed and quality controlled satellite observations of sea level anomaly, sea surface temperature, as well as in situ observations of temperature and salinity \cite{jean2021glorys}. From these datasets, we extracted information from January to March, 2022.
+
+\subsection{Dynamical computations}
+
+\subsubsection{Cross-shelf edge exchanges}
+The Ekman Transport based on wind stress allowed the identification of the cross-shelf response to winds during January and March 2022 \cite<Equation~\ref{eq:ekman}, >{brink2016,gangopadhyay2022introduction}: 
+
+\begin{linenomath*}
+\begin{eqnarray}
+    \label{eq:ekman}
+    T_{Uek}  & = & \frac{\tau^{ERA5}_y}{f \rho} \nonumber \\
+    T_{Vek} & = & - \frac{\tau^{ERA5}_x}{f \rho}
+\end{eqnarray}
+\end{linenomath*}
+
+where $T_{Uek}$ and $T_{Vek}$ is the zonal and meridional Ekman transport, $\tau_{x}$ and $\tau_{y}$ the zonal and meridional wind stress components, $\rho = 1028\ kg\ m^{-3}$ is the water density. 
+
+The cross-shelf geostrophic velocity was calculated along the 200-m isobath, which is defined as a virtual transect (red line in Figure~\ref{fig:study_area}) and indicates here the shelf break limit; the bathymetry for this analysis was obtained from the GEBCO dataset \cite{weatherall2015new}. Both cross-shelf geostrophic velocity and Ekman transport were rotated using an average angle of 55$^o$.
+
+\subsubsection{Additional computations}
+Assuming that \textit{$S_{max}$} intrusions correlate with the maximum stratification in a water column, and thus are associated with the pycnocline \cite{silva2023inventory}, it is helpful to calculate the mixed layer depth (MLD) to investigate whether intrusion signals are consistent with previous intrusions observed in the region. The MLD was determined through the gradient density criteria \cite{lorbacher2006ocean}, with a threshold of 0.025 $kg\ m^{-3}$. This is relevant as the temperature criteria alone \cite<e.g.,>{de2004mixed} may not be representative of MLD where salinity gradients are important in the SBB \cite{silveira2023,sasaki2024}. 
+
+To understand the response of cross-shelf circulation to upwelling favorable winds at the shelf break, we computed the slope Burger number (Equation~\ref{eq:burger}), using observed vertical profiles near the shelf edge (depicted in Figure~\ref{fig:study_area}):
+
+\begin{linenomath*}
+\begin{equation}
+\label{eq:burger}
+Bu = \frac{N*\alpha}{f}
+\end{equation}
+\end{linenomath*}
+
+where $N$ is the Brunt-Vaisalla frequency and $\alpha$ is the topographic gradient ($\alpha = \frac{dh}{dx'}$, where $x'$ is the direction of the cross-isobath), extracted from GEBCO in the locations closest to the CTD casts used. The Burger number indicates whether the cross-shelf circulation response to wind stress will be barotropic or baroclinic \cite{clarke1985,LentzChapman2004}. This distinction is crucial for understanding the vertical structure of the cross-shelf circulation induced by wind stress. In particular, when $Bu \geq 1$, the onshore current opposite the favorable wind-driven circulation caused by upwelling will take place in subsurface levels, above the bottom boundary layer \cite{LentzChapman2004}.
+
+\subsection{Lagrangian experiments} 
+
+Lagrangian experiments were conducted to assess probable pathways leading to the \textit{$S_{max}$} observed on SBB. We chose the OceanParcels v2.4 model \cite{delandmeter2019parcels} to carry out these experiments, due to its wide applications to understand trajectories in the ocean using outputs of general ocean circulation models \cite{valles2022water,dawson2023pathways,seijo2023intrusions}. The advection of virtual particles employs a fourth-order Runge-Kutta iteration scheme \cite{delandmeter2019parcels}, using velocity fields from GLORYS12V1 \cite{jean2021glorys}. This product provides daily hydrodynamic fields, in a 0.08$^o$ horizontal resolution, assimilating large observational datasets. The Lagrangian experiment setup uses a built-in extra module that deletes particles that reaches any closed boundary, avoiding accumulation at the boundaries. Table~\ref{tab:lagrangian_experiments} summarizes the Lagrangian experiments and the their characteristics, which were selected based on the \textit{$S_{max}$} observations. The setup is explained in more detail in Section~\ref{subsec:lagpath}. The results are presented as concentration maps that compute the total number of particles passing by each grid cell during the integration of the experiment, normalized by the total amount of particles released.
+
+\begin{table}[ht!]
+\caption{Summary of Lagrangian experiments performed, along with seeding center and depth, number of particles launched (n) distributed over a 1$^o$ squared box and date of release. For PBI and PBII, the location, depth and date of release are related to the last vertical profiles in which \textit{$S_{max}$} was detected. PBI and PBII are backpropagation experiments using the 3D GLORYS12V1 hydrodynamical field and the 25.5 kg m$^{-3}$ isopycnal velocity, respectively. Experiments FPE and FPN are forward propagation experiments, using the 3D GLORYS12V1 hydrodynamical field, with particles released at locations selected from the PBI results, to the east and north of the region of interest, respectively. On these experiments, particles were released at 50-m depth on January 1st and run for 90 days. The B/F columns indicates whether the experiment is a Backward (B) or Forward (F) simulation.}
+\label{tab:lagrangian_experiments}
+\begin{tabular}{c c c c c c}
+\hline
+\textbf{Experiment} & \textbf{Center} & \textbf{Vertical Position} & \textbf{n} & \textbf{Date} & \textbf{{[}B/F{]}} \\
+\hline
+BPI                  & 42.77$^o$W, 23.64$^o$S & 50 m depth                     & 100          & 2022-03-27 & B    \\ 
+BPII                 & 42.77$^o$W, 23.64$^o$S & 25.5 kg m$^{-3}$ isopycnal                      & 100         & 2022-03-27 & B     \\ 
+FPE                  & 39$^o$W, 26.5$^o$S & 50 m depth                     & 100          & 2022-01-01 & F    \\ 
+FPN                  & 40$^o$W, 22$^o$S & 50 m depth                     & 100          & 2022-01-01 & F     \\ 
+\hline
+\end{tabular}
+\end{table}
+
+\section{Results}
+\label{section:description}
+
+\subsection{Salinity Maximum intrusions during March 2022}
+\label{subsec:smaxdesc}
+
+The hydrographic transects reveal differences in oceanographic conditions during 2 weeks in the Northeast region of the South Brazil Bight (NE-SBB). We identified an \textit{$S_{max}$} intrusion signal along the transect during the first week (Figure~\ref{fig:cruise_transect} a, named A), with a well-defined intrusion over the shelf edge between 25 and 50 m depth. This feature corresponded to a 25 m thick \textit{$S_{max}$} intrusion of saltier waters (S $>$ 37 g kg$^{-1}$), crossing the isopycnals (white dashed lines in Figure~\ref{fig:cruise_transect} a). A relatively fresher extension of the same intrusion was found on the inner shelf, with a thickness of approximately 20 $m$ and waters with 36 $g\ kg^{-1}$. The freshening is caused by the dilution or diffusion of the intrusion as it propagates towards the coast \cite{silva2023inventory}. Along the first transect, an intense difference in temperature was found at the surface, varying from 20$^o$C, in the inner shelf, to over 30$^o$C offshore (Figure~\ref{fig:cruise_transect} b). Near the bottom, water colder than 18$^o$C indicate the presence of the relatively cold and nutrient-rich South Atlantic Central Water (SACW), as indicated by the TS diagram (Figure~\ref{fig:cruise_transect} c) This water mass is found throughout the year in the area  as response to the offshore surface Ekman Transport forced by northeast winds \cite{cerda2014,castro2014summer,dottori2023}. The near bottom onshore advection also uplifts isopycnals towards the coast (Figure~\ref{fig:cruise_transect} a, b and c). At the region offshore the shelf break, water warmer than 25$^o$C with salinity higher than 36 $g\ kg^{-1}$ was found, indicating the presence of Tropical Water (TW) \cite{cerda2014,castro2014summer}. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1.\linewidth]{figures/00_manuscript_cruise_transects_new2.png}
+    \caption{Transects of absolute salinity (top panels) and temperature (middle panels), reconstructed with optimum interpolation using CTD profiles obtained during the first (left) and second (right) campaigns, whose locations are indicated by the orange dotted line in Figure~\ref{fig:study_area}. Bottom panels show the corresponding TS diagrams for each campaing. In panels (a), (b), (d) and (e) black contours denote isolines of the plotted property, while white contours indicate 25 and 25.5 $kg\ m^{-3}$ isopycnals. The x-axis represents the horizontal distance from the coastline ($km$), and the y-axis indicates depth ($m$). Red dots at the surface mark the locations of the vertical profile used in the reconstruction. The red hashed area near the bottom areas highlights regions with high normalized error variance ($>$0.001), where the interpolated fields should be interpreted with caution. Letters A and B identify distinct \textit{$S_{max}$} intrusions, and A* denotes an intrusion undergoing erosion. In panels (c) and (f) the isopycnal lines of 24.6 and 25.6 $kg\ m^{-3}$ are also shown for reference in dashed red lines.}
+    \label{fig:cruise_transect}
+\end{figure}
+
+After two weeks, the second transect (Figure~\ref{fig:cruise_transect} d, e and f)  reveals a slightly different hydrographic condition. This transect shows the presence of a \textit{$S_{max}$} signal coming onto the shelf, with waters 2 $g\ kg^{-1}$ fresher than the previous case (therefore, named as B). During the second campaign, intrusion B occupied depth levels above the 25 $kg\ m^{-3}$ isopycnal, except for the region near the shelf edge between 100 and 150 $km$from the coast, where the feature crosses the isopycnals. Intrusion A (Figure~\ref{fig:cruise_transect} a) retreated towards the shelf edge, suggesting the erosion of its intrusion (A* in Figure~\ref{fig:cruise_transect} d). The temperature structure (Figure~\ref{fig:cruise_transect} e) also changed between the two transects. This transects shows a weaker cross-shelf temperature gradient, with waters relatively warmer on the inner shelf (around 26$^o$C) and slightly colder offshore (around 28$^o$C), as indicated in the TS diagram for this campaign (Figure~\ref{fig:cruise_transect} f).
+
+Satellite-derived sea surface temperature (SST) shows a cross-shelf difference of approximately 4$^o$C, with temperatures below 22$^o$C on the shelf and above 26$^o$C offshore (Figure~\ref{fig:context} a), also observed in the CTD profiles (Figure~\ref{fig:cruise_transect} a). This horizontal contrast suggests cold water uplift driven by seasonal upwelling-favorable northeasterly winds \cite{emilsson1961shelf,dottori2023}. During the second transect (Figure~\ref{fig:context} c), the cross-shelf temperature difference is weaker, around 2$^o$C. These changes are consistent with in situ surface temperature patterns observed along the cruise transect (Figure~\ref{fig:cruise_transect} b and e), despite some discrepancies between satellite and in situ near-surface measurements \cite{pereira2020discrepancies}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1.\linewidth]{figures/00_manuscript_oceanographicContext.png}
+    \caption{Plain view of the averaged satellite-derived sea surface temperature (SST) condition presented in the top panels in colors (data from AVHRR), for (a) the period from 5 to 14 March (1st sampling), (b) between cruises (from 15 to 22 March) and (c) for the second sampling (23 to 28 March). These panels are superimposed by cyclonic (blue) and anticyclonic (red) eddies (obtained from Meta3.1exp DT) detected during each period. Bottom panels presents the accumulated precipitation (from the MERGE dataset) for each period with Ekman transport (calculated from ERA5 wind stress) as black vectors. Black (at the upper panels) and red (at the bottom panels) dots represent the hydrographic dataset correspondent to all CTD and ARGO profiles, as indicated in \protect Figure~\ref{fig:study_area} (check Section~\ref{subsec:hydro_dataset} for more details).}
+    \label{fig:context}
+\end{figure}
+
+\subsection{Remote sensing -- SST and ADT environment}
+\label{subsec:remote_sensing}
+
+Here we evaluate the influence of mesoscale features and the Ekman transport influence on the shelf break and slope environment, associated with the \textit{$S_{max}$} signals observed during the campaigns. The weather conditions during both transects were different and may be responsible for the differences in SST. During the first cruise, the presence of upwelling-favorable winds (Figure~\ref{fig:context} d) likely reduced shelf temperatures, while weak cloud coverage favored an increase in offshore SST, contributing to the relatively larger gradient observed. During the second cruise, the passage of a frontal system a few days prior to the observations contributed to reducing the SST field throughout the domain, weakening the Ekman transport due to the reduction of wind intensity (Figure~\ref{fig:context} f).
+
+The mesoscale signals detected in remotely sensed images were associated with the presence of \textit{$S_{max}$} during the period. For instance, SST patterns resembled a CFE signal in both cruises (Figure~\ref{fig:context}), offshore the NE-SBB (centered in, approximately, 25$^o$S and 42$^o$W). The geostrophic currents (Figure~\ref{fig:geostrophic_fields}) showed an interaction between a CFE and an anticyclonic eddy, centered at approximately 24.5$^o$S and 41.5$^o$W, between February and early March (Figure~\ref{fig:geostrophic_fields} a to c). This interaction led to intense currents, reaching up to 0.6 $m s^{-1}$. Its influence over the SST field is depicted mainly as a cold water tongue at the eastern edge of the eddy (Figures~\ref{fig:context} a and b, at the same location). At the end of March, the BC splitted in two branches at 24$^o$S and 41.5$^o$W (Figure~\ref{fig:geostrophic_fields} d), with one branch flowing along the shelf edge, westward, and another branch flowing southwestward. This second branch meanders around a weaker CFE, and then part of this branch attaches back to the shelf edge near 24$^o$S and 42.3$^o$W. The influence of the meander on the cross-shelf currents is observed on the cross-shelf geostrophic current Hovmoller along a transect following the 200-m isobath (Figure S1). This analysis shows two centers of intense shoreward currents occurring between January and February and during March (Figure S1). The projected shoreward geostrophic current occur between 24.5$^o$S and 24.0$^o$S, the same spot where the BC meander attaches back to the shelf edge. Therefore, it is expected that mesoscale activity plays an important role over the cross-shelf exchanges, in addition to upwelling-favorable winds response.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/00_review_geostrophic_fields_with_ADT_new.png}
+    \caption{Zoomed plain view (black dashed square on Figure~\ref{fig:study_area}) of the sea surface elevation anomalies (in colors and contour) from gridded AVISO for (a) February 16, (b) February 21, (c) March 7 and (d) March 27. Geostrophic velocity fields overlaid the plots in gray vectors, for gridded AVISO, and computed using along-track altimeter absolute dynamic topography (ADT) in black vectors. Green markers represent locations of CTD profiles obtained by the time of each plot and red markers are the locations of the ARGO profiles. Big black arrows on all panels spot the location of the Cabo Frio Eddy (CFE) and the anticyclonic eddy observed during the period. The red dots indicate the profilers originated from the ARGO dataset. The green dots are the CTD profiles obtained during the cruises, each subpanel only presents the profiles sampled prior to the day associated with the sea level anomalies and geostrophic velocity. They were used as reference for the mesoscale features observed.}
+    \label{fig:geostrophic_fields}
+\end{figure}
+
+\subsection{Cross-shelf connectivity}
+\label{subsec:cross}
+The previous section presented hydrographic observations made during both cruises, revealing the presence of a \textit{$S_{max}$} intrusion (Figure~\ref{fig:cruise_transect}). To understand the origin of these structures and their entry mechanisms onto the continental shelf, we investigate the water mass characteristics and their advective velocities in this region using available ARGO profiles, a Glider dataset, and altimeter (both gridded fields and tracks) in the weeks leading to and during the cruise. We describe the results using the ARGO observations and Glider data to establish a plausible pathway indicating cross-shelf connectivity in this subsection. Two ARGO floats with paths relevant for our evaluation were selected and displayed by lines A1 (February) and A2 (February-March) in Figure~\ref{fig:study_area}. 
+
+\textit{$S_{max}$} signals present between the open ocean and the shelf edge, obtained from different measurement platforms in the weeks prior to the cruises, illustrate potential connections between these environments (Figure~\ref{fig:argo_alongshelf} and Figure~\ref{fig:argo_crossshelf}). Two ARGO probes recorded multiple profiles with \textit{$S_{max}$} signals that were consistent over time and space. In each ARGO dataset, the recorded absolute salinity had values exceeding 37.1 $g\ kg^{-1}$, with an increase of approximately 0.3 $g\ kg^{-1}$ from the surface. These signals were detected at depths ranging from 50 to 75 $m$, located below the mixed layer and between the 25 and 25.5 $kg\ m^{-3}$ isopycnals (Figure~\ref{fig:argo_alongshelf} and Figure~\ref{fig:argo_crossshelf}). The first ARGO (A1) recorded \textit{$S_{max}$} between January 20$^{th}$ and February 1$^{st}$, while during the same period, the second ARGO (A2) did not show any \textit{$S_{max}$} signal (Figure~\ref{fig:argo_alongshelf} and Figure~\ref{fig:argo_crossshelf}). A few days later, the \textit{$S_{max}$} signal was observed from February 15$^{th}$ to the end of March, while the ARGO drifted closer to the shelf edge. The similarities between these observations, particularly in the vertical position, indicate that these are the same features. The ARGO tracks suggest this signal moved towards the shelf edge, 50 and 40 days, prior to the \textit{$S_{max}$} observation over the shelf (see Figure~\ref{fig:train_profiles} f for map with the location and time of each observation). The southwestward drift of the Argo floats limited the possibility of further analysis.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/00_manuscript_argo_alongshelf.png}
+    \caption{Transects reconstructed from ARGO profiles along line A1 in Figure~\ref{fig:study_area}  (WMO ID 3901549), for absolute salinity (top panel) and temperature (bottom panel). The black line indicates the 37.1 $g\ kg^{-1}$ isohaline, the white isopycnals for 25, 25.5 and 26 $kg\ m^{-3}$ and red dashed lines indicate the mixed layer depth, using the density criteria. The x-axis is time, while the y-axis is the depth in $m$. The path of the float is shown from northeast (left) to southwest (right) in \protect Figure~\ref{fig:study_area} as red markers}.
+    \label{fig:argo_alongshelf}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/00_manuscript_argo_crossshelf.png}
+    \caption{Same as Figure~\ref{fig:argo_alongshelf}, but for ARGO along line A2 in Figure~\ref{fig:study_area} (WMO ID 3901225) and its path from South (left) to North (right) is found in \protect Figure~\ref{fig:study_area} as black markers. The green, black and white vertical dashed lines indicates the periods according to the direction or position of the instrument during its advection (\protect Figure~\ref{fig:study_area}).}
+    \label{fig:argo_crossshelf}
+\end{figure}
+
+The Slocum Glider (SG19) sampled this region during March 2022 and enabled the evaluation of the \textit{$S_{max}$} advection towards the shelf edge. In this dataset, intrusion signals similar to those detected in the Argo floats were observed (Figure~\ref{fig:glider_transect}). To describe the hydrography from the glider (Figure~\ref{fig:glider_transect}), the glider trajectory is divided in three segments for analysis: the first extends from March 3$^{rd}$ to 12$^{th}$ and represents the most offshore observations,  (Figure~\ref{fig:glider_transect} a), the second is a loop pattern followed by the glider (Figure~\ref{fig:glider_transect} b) from 13$^{th}$ to 19$^{th}$ March, while the last section with data from 22$^{th}$ to 27$^{th}$ March contains the most onshore observations (Figure~\ref{fig:glider_transect} c).
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/00_manuscript_glider_transect.png}
+    \caption{Transects reconstructed from Slocum Glider SG19, for absolute salinity (a) and temperature (b). The black line indicates the 37.2 $g\ kg^{-1}$ isohaline, the white isopycnals for 25, 25.5 and 26 $kg\ m^{-3}$ and red dashed lines indicate the mixed layer depth, using the density criteria. The x-axis is time, while the y-axis is the depth in $m$. The path of the glider is shown in \protect Figure~\ref{fig:study_area} as a continuous black line. The green, black and white vertical dashed lines in (a) and (b) highlights periods where the \textit{$S_{max}$} was observed, while the blue and orange continuous vertical lines represents the two profiles in (c), without and with the \textit{$S_{max}$} respectively.}
+    \label{fig:glider_transect}
+\end{figure}
+
+Over the entire period the first section (Figure~\ref{fig:glider_transect} a), the transect shows the presence of \textit{$S_{max}$}, covering an extension of approximately 79 $km$. After this period, the \textit{$S_{max}$} signal is absent when the glider veered towards the shelf edge and to northeast, performing the loop pattern (Figure~\ref{fig:glider_transect} b). When the glider drifted westwards, between days 15 and 20, the salinity maximum was measured once again. The glider sampled almost the same location twice in a 6-day span (Figure~\ref{fig:study_area}, zoomed map), hence, it is useful to evaluate the vertical profiles from these dives. For the first profile (Figure~\ref{fig:glider_transect} b, blue) we did not find any intrusion signal, following the \textit{$S_{max}$} identification method from \cite{silva2023inventory}, but six days later the \textit{$S_{max}$} signal arrived at this location (Figure~\ref{fig:glider_transect} b, orange). The effect of \textit{$S_{max}$} increased absolute salinity from 37 $g\ kg^{-1}$ to 37.4 $g\ kg^{-1}$, between 50 and 75 $m$ depths, but also had an influence on the water column, increasing the salinity from the mixed layer depth to, at least, 200 $m$ depth, by about 0.3 $g\ kg^{-1}$. The latter portion of the glider dataset (Figure~\ref{fig:glider_transect} c) shows once again the \textit{$S_{max}$}, this time in closer proximity to the shelf edge.
+
+\subsubsection{Water mass transformation}
+\label{subsubsec:watermass}
+
+In this subsection, we examine the transformation of the \textit{$S_{max}$} signal as it is advected from offshore toward the northeastern South Brazil Bight. The analysis is based on a sequence of hydrographic profiles that document changes in the vertical structure of \textit{$S_{max}$}, complemented by the GLORYS12V1 reanalysis to explore its spatial and temporal evolution and to bridge the gaps between in situ observations.
+
+The evaluation of specific vertical profiles from the set of hydrographic data presented allows us to describe the evolution of \textit{$S_{max}$} by advection from deep waters to the NE-SBB (Figure~\ref{fig:train_profiles}). Assuming that the same \textit{$S_{max}$} was sampled across the datasets, it is possible to track the \textit{$S_{max}$} transformation with time and relate these changes to the main hydrodynamical processes in this region, like wind or eddy-driven circulation \cite{calado2010,uchoa2023,rocha2022,silveira2023}. Figure~\ref{fig:train_profiles} shows the consecutive locations of profiles that have been traced chronologically to follow the advection of the salinity maximum intrusion from offshore to the shelf region of SBB.
+
+In terms of water mass change throughout the profiles (Figure~\ref{fig:train_profiles} a to d), the \textit{$S_{max}$} presented salinity higher than 37 $g\ kg^{-1}$, associated with the presence of TW at the mixed layer, which is a salty and warm water mass \cite<S $\geq$ 37 $g\ kg^{-1}$ and $T$ $\geq$ 24$^o$C, >{cerda2014}, characteristic of the southwestern South Atlantic \cite{castro1998physical}. Note that the temperature in the first three profiles (Figure~\ref{fig:train_profiles} a to c) also shows warmer conditions, which have relevant impacts over the \textit{$S_{max}$} density. The salinity reduces to 36.5 $g\ kg^{-1}$ and temperature decreases in about 4$^o$C once over the shelf (Figure~\ref{fig:train_profiles} d and e). The drop in salinity can be related to the mixing with SACW, characterized by the relatively colder waters \cite<colder than 18$^o$C, >{cerda2014}. This is possible under upwelling favorable wind conditions, in which SACW is uplifted or upwelled, decreasing the temperature and salinity at the surface levels \cite{castro1998physical,cerda2014}. The amount of information is limited and does not allow us to infer the changes between the first and the second profiles. However, these hydrographic conditions reveal the influence of local processes in the vertical position \textit{$S_{max}$} and the density associated with the maximum salinity.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/00_manuscript_train_profiles_new.png}
+    \caption{Vertical profiles of absolute salinity (black) and temperature (red) with \textit{$S_{max}$} detected by the algorithm used by \protect\citeA{silva2023inventory}. Each vertical profile, from a to e, presents the depth of the \textit{$S_{max}$} as red marker along its potential density (in $kg\ m^{-3}$). In (f) there is the geographical position of each profile, along with their dates for reference. The profiles presented here were selected from the ARGO and CTD datasets (see Section~\ref{subsubsec:watermass} for more details), as such (f) presents a zoomed subset region.}
+    \label{fig:train_profiles}
+\end{figure}
+
+To overcome the gap between profiles, we investigated the salinity and horizontal velocity patterns at a 50-m depth layer from GLORYS12V1, along with the geostrophic currents derived from altimetry, to understand the advection of \textit{$S_{max}$} toward the shelf (Figure~\ref{fig:glorys_fields}). On February 4, a salinity maximum (S $>$ 37 psu) is observed offshore the NE-SBB, reaching a close proximity with the location of the first ARGO profile on February 10 (Figure~\ref{fig:glorys_fields} a). The geostrophic currents indicate a southwestward flow, consistent with the ARGO float trajectory, revealing a \textit{$S_{max}$} moving southwards, reaching the southernmost point on February 18 (Figure~\ref{fig:glorys_fields} b) from where it starts to move shoreward. On March 3, this feature is located slightly to the west of the second observation from ARGO (Figure~\ref{fig:glorys_fields} c). From March 6 to 27, the \textit{$S_{max}$} is advected toward the shelf, describing a movement similar to what was observed from the CTD profiles, although slightly westward. The geostrophic currents during this period show the development of an eddy dipole, pushing the \textit{$S_{max}$} signal shoreward and becomes fully developed on March 27, date where we last observed the feature (Figure~\ref{fig:glorys_fields} d and Figure~\ref{fig:geostrophic_fields} c). The full advection of \textit{$S_{max}$} from offshore to the shelf takes approximately 50 days, consistent with the time interval between the first ARGO observation and the CTD profiles. After that, the tracking is no longer possible due to shelf processes that either dissipate the \textit{$S_{max}$} or mix it with fresher waters. The Supplementary Video S1 shows the full temporal evolution of the salinity field at 50 m depth, along with the horizontal velocity at the same depth. A validation of the GLORYS12V1 dataset was carried out by selecting vertical profiles from specific locations tracking a \textit{$S_{max}$} signal found on the previous description (Figure~S2), and comparing them with the in situ measurements (Figure~\ref{fig:glorys_fields}). Despite a slight westward displacement, the GLORYS12V1 profiles reproduce the main vertical structure and hydrographic features observed in the in situ profiles (Figure S2 a to g), indicating a good consistency between the reanalysis and observations. 
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/00_manuscript_glorys12v1_fields.png}
+    \caption{Snapshots of the \textit{$S_{max}$} advection on the GLORYS12V1 dataset, with practical salinity (in psu) at 50 m depth in colors and horizontal velocity in black arrows at the same layer, for (a) February 10, (b) February 18, (c) March 3 and (d) March 27 of 2022. Bathymetry from GEBCO2019 (Weatherall et al., 2015) is represented by thin gray lines. The black dashed box represents the region of interest, to highlight the advection throughout the period. The black dots in each panel represent the selected vertical profiles presented in Figure~\ref{fig:train_profiles}. The entire advection is found in the Supplementary Video S1.}
+    \label{fig:glorys_fields}
+\end{figure}
+
+\subsection{Lagrangian Pathways}
+\label{subsec:lagpath}
+
+A set of Lagrangian experiments were used to investigate potential pathways and sources of the observed \textit{$S_{max}$} intrusions toward the NE-SBB shelf. Four experiments were run based on previous analysis (see Section~\ref{subsubsec:watermass} and Supplementary Video S1): two back-propagation experiments releasing particles at 50 m (BPI) and along the 25.5 kg m$^{-3}$ isopycnal (BPII), and two forward experiments releasing particles north (FPN) and east (FPE) of the region of interest, at 50 m depth for both. The experiments BPI, FPN, and FPE used the full three-dimensional GLORYS12V1 velocity field at 50-m depth level, while for the experiment BPII GLORYS12V1 velocities were interpolated onto the 25.5 kg m$^{-3}$ isopycnal layer to constrain advection to this density layer. All experiments were seeded with 100 particles within a 1-degree by 1-degree box around a launch point. For the two backtracking experiments, the launch point was at 42.77$^o$W and 23.64$^o$S on March 27, matching the last observation of \textit{$S_{max}$}. The release points for the northern and eastern forward propagation experiments were chosen at 40$^o$W, 22$^o$S and 38$^o$W, 26.5$^o$S, respectively, approximately 40 days prior to the last observation on the shelf. Table~\ref{tab:lagrangian_experiments} summarizes the Lagrangian experiment setups. 
+
+The backtracking experiments reveal two potential pathways for \textit{$S_{max}$}: (i) cross-shelf components that can be advected westward either through a meandering pathways offshore of NE-SBB or (ii) via along-shelf advection over the 200 m isobath, originating from the north, both occurring within approximately 40 days (Figure~\ref{fig:lagrangian_analysis} a). The cross-shelf pathway represents the highest probability, accounting for 30$\%$ of the particles seeded on the shelf (BPI, Figure~\ref{fig:lagrangian_analysis} a). It presents a meandering shape, possibly around a set of cyclonic and anticyclonic eddies, swirling along the shelf toward the shelf edge while effectively transporting particles across the shelf. There is a particle hotspot centered at 42$^o$W and 25$^o$S, where they do not present a clear pathway but instead show an accumulation, although a main path is still distinguishable. After 40 days, particles were mostly backtracked to offshore regions off the seeding location. This Lagrangian analysis result provides a better fit with the selected vertical profiles used to understand the transformation of the water mass (Figure~\ref{fig:train_profiles}), as indicated by the red dots in Figure~\ref{fig:lagrangian_analysis} a. Comparatively, the BPII experiment (Figure~\ref{fig:lagrangian_analysis} b) shows similar results to the previous experiment (BPI). It is noteworthy that in BPII, more particles were advected over the shelf between Cabo de São Tomé and Guanabara Bay (Figure~\ref{fig:study_area}), unlike in the previous experiment. Combined, BPI and BPII analysis show the cross-shelf and the along-shelf are both good candidates as origins of the \textit{$S_{max}$} on the continental shelf.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/00_manuscript_lagrangian_analysis.png}
+    \caption{Time and vertically integrated particles concentration on (a) the 3D GLORYS12V1 and (b) the isopycnal surface velocities backpropagation experiments with release at the last \textit{$S_{max}$} observed on 27th March over the shelf at 50-m depth. Panels (c) and (d) are for the forward propagation experiments (FPE and FPN, respectively). The red markers in all subpanels indicates the location of the sequence of profiles from \protect Figure~\ref{fig:train_profiles}. The black dashed box on each panel represent the seeding location, better described in Table~\ref{tab:lagrangian_experiments}.}
+    \label{fig:lagrangian_analysis}
+\end{figure}
+
+Although the eastern source appears to be the most probable origin of March 2022 \textit{$S_{max}$}, as indicated by the cross-shelf pathway, a secondary source was identified via backpropagation analysis. The along-isobath pathway brings particles from the Tubarão Bight (39$^o$W, 20.5$^o$S), north of the region of interest (Figure~\ref{fig:lagrangian_analysis} a), transporting particles following the isobaths. However, off Cabo Frio, both pathways merge, making it not possible to separate one from another. 
+
+To better understand the relative contribution of each pathway, two forward propagation experiments were conducted (FPE and FPN). Results indicate that particles released from east (FPE, Figure~\ref{fig:lagrangian_analysis} c) did not reach the shelf area. In contrast, particles released from the north (FPN, Figure~\ref{fig:lagrangian_analysis} d) successfully reached the shelf region within the 40-day timeframe, following an alongshelf pathway with meanders leading a cross-shelf secondary pathway. A four-segment pathway seems to be a suggestive advection route for the salinity intrusion in the FPN which include: (i) the Brazil current meandering southwestward from the source region; (ii) around the Cabo Frio eddy -- aided by the eddy to go around towards the shelfbreak; (iii) probably enhanced by a proximate anticyclonic eddy to the west of the CFE; (iv) aided by the meandering Brazil Current around the CFE as well, finally reaching the shelfbreak. Note that although the SBB is often classified as a wider shelf with direct influence from the Brazil Current at the edge \cite{zembruscki1979geomorfologia}, the NE-SBB compartment is narrower with a stronger influence of the Brazil Current \cite{zembruscki1979geomorfologia,castro1998physical,castro2014summer,dottori2023}. This suggested pathway is somewhat similar to the Brazil Current pathway shown for another cruise in 2001 analyzed by \citeA{calado2006parametric} (see their Figure 1) for parameterizing the Cabo Frio Eddy.
+
+Using results from FPN, the only experiment that reached the region of interest, we have found that 31$\%$ of the particles that reached the shelf area did so within 10-days, covering a cumulative distance of 335 $km$ and under the influence of high EKE during 26$\%$ of that time. In contrast, 21$\%$ of the particles reached the shelf area after 20 days on average, with a cumulative distance covered of 541 $km$, spending 37$\%$ of this time under high EKE activity, which is signicantly higher than the first case (Mann-Whitney Test, p-value $<$ 0.001). Additional details on the Lagrangian experiments are provided in Text S1 and Figure S3.
+
+We acknowledge the discrepancies between back and forward propagation, due to initial conditions sensitivity and biases errors on Lagrangian analysis \cite{reijnders2026stability}. However, the spatial convergence of particles over the region of interest on both back and forward propagation experiments, combined with the location where Smax were found and the GLORYS12V1 analysis, indicates the source of Smax are from north, possibly near the Tubarão Bight (39$^o$W, 20.5$^o$S).
+
+\subsection{Ekman Transport on the Shelf}
+\label{sub:ekman}
+
+The surface Ekman transport ($T_{Ek}$), calculated from wind stress, is presented in Figure~\ref{fig:context} as vectors. It shows that throughout the first observational cruise, $T_{Ek}$ was predominantly towards offshelf (Figure~\ref{fig:context} d), due to constant northeasterly winds, from the South Atlantic Subtropical High \cite<SASH, >{stech1990estudo}, generating an offshelf Ekman Transport of approximately 80 $m^2\ s^{-1}$. Winds from SASH has an average intensity of 10 $m\ s^{-1}$ \cite{pimenta2019brazil}, with a lower frequency of cold fronts \cite{stech1990estudo}, its persistence drives significant cross-shelf exchanges, pushing water offshore and by mass conservation cold and nutrient rich waters (SACW) upwells or uplift nearshore. It results in coastal upwelling such as the one observed during the first transect, which also generates a cross-shelf SST gradient (Figure~\ref{fig:context} a). Between both samplings, the wind patterns changed and intensified, associated with a cold front passage that inverted the wind direction \cite{stech1990estudo}. Not only did it affect the sea surface by changing the input of momentum, but also the incident solar radiation due to an increase in cloud coverage, which subsequently reduced the SST (Figure~\ref{fig:context} b). The wind inversion was not persistent enough to generate an onshelf surface $T_{Ek}$ (not shown), resulting only in relatively weaker offshelf $T_{Ek}$, reducing from 50 $m^3\ s^{-1}$ between cruises (Figure~\ref{fig:context} e) to 20 $m^3\ s^{-1}$ in the second cruise (Figure~\ref{fig:context} f).
+
+Onshore transport occurs at depth in response to offshore Ekman transport at the surface, either near the bottom or in midwater \cite{LentzChapman2004}. During the analyzed period, the onshelf transport over the shelf edge was expected to be above the bottom Ekman layer, i.e., in subsurface levels, as given by the slope Burger number ($Bu$) higher than 1 \cite{LentzChapman2004} as presented in Table~\ref{tab:burger_number}.
+
+\begin{table}[ht!]
+\caption{Summary of topographic gradient ($\alpha$), Buoyancy Frequency ($N^2$) and Burger number ($Bu$, Equation~\ref{eq:burger}) computed for specific CTD profiles extracted from SANAGU14 and SANAGU15 campaings. The localion of both profiles are represented in Figure~\ref{fig:study_area} as black stars.}
+\label{tab:burger_number}
+\centering
+\begin{tabular}{c c c c}
+\hline
+\textbf{Vertical Profile} & \textbf{$\alpha$} & \textbf{$N^2 [s^{-1}]$} & \textbf{$Bu$} \\
+\hline
+        G4 & $23 \times 10^{-3}$ & $5.96 \times 10^{-5}$ & 9.15 \\
+        G4' & $23 \times 10^{-3}$ & $4.65 \times 10^{-5}$ & 7.14 \\
+        H4 & $11 \times 10^{-3}$ & $5.32 \times 10^{-5}$ & 2.16 \\
+\hline
+\multicolumn{2}{l}{$\alpha$ and $Bu$ are dimensionless numbers.}
+\end{tabular}
+\end{table}
+
+\section{Discussion}
+\label{section:discussion}
+
+\subsection{Observational evidence and broader context of \textit{$S_{max}$} intrusions}
+\label{subsec:discussion_smax_nesbb}
+
+The hydrographic observations off the northeastern South Brazil Bight (NE-SBB) reveal recurrent mid-depth salinity maxima (\textit{$S_{max}$}) detected at multiple locations and times during March 2022. The spatial and temporal coherence of these features, together with the remarkable consistency of their vertical structure despite offsets among individual profiles, indicates that the observed \textit{$S_{max}$} intrusions correspond to the same advective feature sampled at different stages of its evolution, rather than to locally generated anomalies. The intrusions are characterized by well-defined subsurface salinity maxima occupying mid-depth layers, consistent with previous hydrographic surveys in the region \cite{silva2023inventory}, supporting an essentially advective origin for the \textit{$S_{max}$} signal.
+
+The characteristics of the mid-depth \textit{$S_{max}$} intrusions observed in the NE-SBB are also similar to those reported on other continental shelves, most notably in the Middle Atlantic Bight (MAB), as well as in previous surveys in the South Brazil Bight \cite{Campos2000, castro2014summer, silva2023inventory}. In these regions, \textit{$S_{max}$} intrusions are associated with subsurface salinity maxima typically found at mid-depths, with vertical thicknesses on the order of 20–30 m, and are more frequently observed during summer conditions \cite{Lentz2003}. This similarity suggests that \textit{$S_{max}$} intrusions represent a recurrent feature of stratified continental shelves.
+
+Previous studies indicate that the formation and persistence of \textit{$S_{max}$} intrusions involve a combination of lateral advection and double-diffusive processes \cite{Lentz2003, gawarkiewicz2022increasing, silva2023inventory, gawarkiewicz2025mapping}. In the MAB, the increasing frequency and enhanced shelfward penetration of \textit{$S_{max}$} intrusions since the early 2000s have been linked to a rise in warm-core ring activity, with anticyclonic mesoscale eddies playing a central role in their formation and delivery to the shelf \cite{gangopadhyay2019observed, silver2023increased}. In the SBB, cyclonic mesoscale features, such as the Cabo Frio Eddy (CFE), are the possible mechanism promoting \textit{$S_{max}$} intrusions onto the shelf, similarly to the offshore waters injection onto the shelf on the Australian shelf \cite{Malan2020} and MAB \cite{gawarkiewicz2025mapping}.
+
+\subsection{Mesoscale Role on the \textit{$S_{max}$} Advection} 
+\label{subsec:mesoscale_advection}
+
+Although there are differences among Lagrangian experiments caused by biases and sensibilities to the hydrodynamic field \cite<further discussed on>{reijnders2026stability}, the backpropagation experiments are useful to indicate potential sources and pathways, while the forward experiments provides deeper understanding on the processes occurring throughout the particles trajectories. Despite of that, all results made in this work converge into the most likely pathway, which is \textit{$S_{max}$} coming from north, possibly near the Tubarão Bight (39$^o$W, 20.5$^o$S). The \textit{$S_{max}$} reach the NE-SBB through two pathways that resemble the dynamics of the Brazil Current. An alongshelf pathway, flowing southwestwards along the shelf edge, resembles a nonmeandering condition of the BC \cite{silveira2008}, transporting \textit{$S_{max}$} directly from their source right into the NE-SBB. The second pathway describes a cross-shelf route driven by the abrupt change of coastline orientation, where the BC continues flowing southwards by inertia but turns to the shelf due to potential vorticity conservation, developing the BC meander at this latitude \cite{mascarenhas1971study,silveira2008}. This meander often releases from the BC and generates the CFE due to baroclinic instability \cite{silveira2008,luko2022,rocha2022,uchoa2023,silveira2023}. Consistent with this interpretation, the observational dataset shows that all \textit{$S_{max}$} intrusions occur below the mixed layer, where the influence of high-frequency atmospheric forcing is weak \cite{giunta2022ocean}. This vertical structure reinforces the role of mesoscale dynamics in governing the advection of the \textit{$S_{max}$} signal toward the shelf edge.
+
+The hydrographic dataset only provides a snapshot of a longer and more complex advective conditions. These results imply that multiple advective pathways contributes to the supply of \textit{$S_{max}$} for the NE-SBB, with their relative importance modulated by the regional circulation conditions. Approximately 50\% of the particles released near the Tubarão Bight reach the NE-SBB, either by an alongshelf pathway (31\%) or by a longer cross-shelf route (21\%). The comparable contributions of these pathways are noteworthy, as cross-shelf transport would be expected to be more intermittent given the episodic nature of eddy formation. However, the Cabo Frio Eddy is a quasi-stationary feature, characterized by a mean lifetime of approximately 71 days and a formation rate of about 3.5 events per year \cite{silveira2023}, which suggests that its role in facilitating cross-shelf advection is persistent rather than negligible.
+
+\subsection{Mechanisms Driving Onshelf \textit{$S_{max}$} Intrusions}
+\label{subsec:onshelf_mechanisms}
+
+Throughout its advection, the \textit{$S_{max}$} signal is subject to various physical processes that influence its transport and distribution, including directing the advection towards the shelf instead of alongshelf as one would expect considering the Brazil Current main flow. The interaction between the Brazil Current and the cyclonic Cabo Frio Eddy appears to be the main process in the advection of Smax towards the shelf edge. While flowing around the CFE, the BC branches may experience different normal acceleration due to the curvature of the flow: the shoreward branch will have a smaller curvature compared to the offshore branch, therefore, affecting the acceleration (by doubling the radii of the curvature reduces the acceleration in half), which can lead to the shoreward branch hitting the shelf edge perpendicularly and vanishing, while other branches continue flowing alongshelf. This mechanism can effectively redirect the \textit{$S_{max}$} signal towards the shelf edge, as supported by the forward particle tracking experiments, showing that particles from north, a possible source of \textit{$S_{max}$}, are advected towards the shelf break along the CFE edges. Moreover, the eddy dipole formation between the CFE and an anticyclonic eddy southwest of it can intensify even more the cross-shelf transport of \textit{$S_{max}$} towards the shelf break, similarly to mid-depth intrusions found in the MAB \cite{gawarkiewicz2025mapping} and Australia \cite{Malan2020}, possibly injecting \textit{$S_{max}$} fruther onshore.
+
+Once \textit{$S_{max}$} is delivered to the shelf edge by mesoscale advection, its penetration onto the continental shelf requires ageostrophic cross-shelf processes \cite{brink2016, chen2022mesoscale}. In the northeastern South Brazil Bight (NE-SBB), shoreward wind-driven cross-shelf exchanges have been found in numerical experiments between 50 and 100 m depth \cite{combes2021circulation}, under northeasterly wind conditions (upwelling favorable), such as those observed during the study period. The slope Burger number (Bu; Table~\ref{tab:burger_number}) supports this interpretation, where values greater than one indicate a mid-depth Ekman-driven counterflow \cite{LentzChapman2004}, consistent with the locations where \textit{$S_{max}$} was found within the shelf. While wind-driven processes enable the cross-shelf injection of \textit{$S_{max}$}, the background stratification ultimately controls its vertical confinement within the shelf. The enhanced summer stratification found in the NE-SBB promotes relatively shallow and thin intrusions, due to the presence of the South Atlantic Central Waters (SACW) below the \textit{$S_{max}$} intrusion, which limits downward penetration of the \textit{$S_{max}$} signal \cite{silva2023inventory}. It is interesting to note that, differently from the SBB, the MAB \textit{$S_{max}$} are not wind-driven \cite{Lentz2003}. That is likely due to the shelf width difference, where MAB is wider (approximately 100-120 $km$) than NE-SBB \cite<between 50 to 60 $km$, >{castro2014summer}.
+
+Our results suggest that mesoscale dynamics advect the \textit{$S_{max}$} signal from remote locations to the shelf edge, and that wind and stratification together inject it into the shelf, thereby developing a \textit{$S_{max}$} intrusion (summarized on Figure~\ref{fig:schematic}). Despite the consistency between observations, reanalysis, and Lagrangian results, this study has limitations that should be acknowledged. Our hydrographic dataset provides only a snapshot of the complex and dynamic processes governing \textit{$S_{max}$} intrusions in the NE-SBB and does not resolve their temporal variability. The Lagrangian experiments, while informative, are based on reanalysis data that may not fully capture the fine-scale dynamics of the region, particularly during strong mesoscale activity. Additionally, the assumption of passive particle advection neglects potential mixing and diffusion processes that could influence the transport and transformation of \textit{$S_{max}$}. High-resolution numerical simulations designed to isolate the processes are required to quantify interactions among the mechanisms discussed here under different forcing regimes \cite<e.g., >{wang2011,paloczy2016,Chen2019}.
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=1\linewidth]{figures/pathways_schematics_structure.png}
+    \caption{Schematic flow field zoomed at the main area of interest, summarizing the main processes advecting Salinity Maximum (\textit{$S_{max}$}) signals, obtained from the jointly analysis of the geostrophic fields (G, Figure~\ref{fig:geostrophic_fields}), Lagrangian outputs (L, Figure~\ref{fig:lagrangian_analysis}), and GLORYS12V1 analysis (G12V1, Figure~\ref{fig:glorys_fields}). \textit{$S_{max}$} are transported from north by the Brazil Current dynamics (dark and light blue), the pathway is influenced by the Cabo Frio Eddy presence (color), which also form an eddy dipole intensifing the \textit{$S_{max}$} advection towards the shelf break (pink colors). Finally, at the shelf edge, wind-driven circulation is responsible to transport these \textit{$S_{max}$} signals onto the shelf, becoming \textit{$S_{max}$} intrusions (dark red arrows).}
+    \label{fig:schematic}
+\end{figure}
+
+\section{Concluding Remarks}
+\label{section:concluding}
+
+In this study, we present the first observational evidence of remotely advected mid-depth Salinity Maximum (\textit{$S_{max}$}) intrusions in the Northeastern South Brazil Bight (NE-SBB). Using a multi-platform observational dataset, we tracked the pathway of \textit{$S_{max}$} from eastern locations off the NE-SBB to the continental shelf in this region. Our findings indicate that oceanic \textit{$S_{max}$} is consistent with those observed over the shelf \cite{silva2023inventory}, characterized by waters saltier than 37 $g\ kg^{-1}$ and occurring between 50 and 100 m depth. Backpropagation Lagrangian results indicate the origin of \textit{$S_{max}$} being northeast of the study region. 
+
+A key result in this study identifies the Brazil Current and the Cabo Frio Eddy interaction as the main mechanism advecting \textit{$S_{max}$} towards the shelf, describing a cross-shelf pathway. Once at the shelf break, Ekman transport associated with upwelling-favorable winds act as the main process pushing \textit{$S_{max}$} further onto the shelf. In addition to the cross-shelf pathway, our analysis found two secondary processes: (i) the enhancement of the cross-shelf advection process by the interaction between the CFE and an anticyclonic eddy, forming an eddy dipole, and (ii) a southwestward alongshelf pathway, resembling a non-meandering Brazil Current regime, advecting \textit{$S_{max}$} directly from their source.
+
+Our results shed light on the origins and pathways of \textit{$S_{max}$}, a poorly understood phenomenon in the SBB. Recognizing these intrusions of warm, salty waters is essential for advancing our understanding of the Cabo Frio upwelling system. Moreover, under climate change scenarios, further studies in the NE-SBB are required to evaluate how \textit{$S_{max}$} dynamics may influence the thermodynamics of the continental shelf.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% DATA SECTION and ACKNOWLEDGMENTS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Open Research Section}
+
+The CTD casts from the SANAGU campaign \cite{moreira2023multidisciplinary}, belong to Petrobras and are not accessible to the public or research community. The ARGO profiles were obtained on April 2023 from the \textit{Institu Français de Recherche pour l'Explotation de la Mer} (IFREMER), via ARGOPY package \cite{Maze2020}. The Slocum Glider SG19 dataset is not accessible to the public or research community, but it is possible to request access through ProjetoAzul at \url{http://www.projetoazul.eco.br/} \cite{projetoazul2015}. GLORYS12V1 data is available from EU Copernicus Marine Service at \url{https://doi.org/10.48670/moi-00016} \cite{jean2021glorys}. ERA5 output is available from the Copernicus Climate Change Service at \url{https://doi.org/10.24381/cds.adbb2d47} \cite{hersbach2018era5}. The bathymetry data were downloaded from GEBCO 2019 \cite{weatherall2015new}. The altimeter dataset and derivative products from them were processed by SSALTO/DUACS and distributed by CMEMS \cite{aviso_cmems,aviso_cmems_ssh_at} with support from the \textit{Centre national d'études spatiales} (CNES).  The precipitation dataset from MERGE were obtained on April 2023, from the National Institute on Spatial Research (or INPE in Brazilian portuguese) website (\url{https://ftp.cptec.inpe.br/modelos/tempo/MERGE/GPM/DAILY/}). The sea surface temperature were obtained from the National Centers for Environmental Information (NCEI), via their website (\url{https://www.ncei.noaa.gov/data/oceans/pathfinder/Version5.3/L3C/}). This work used the Gibbs-Seawater Oceanographic Toolbox with the python package GSW \cite{mcdougall2011gsw}, CTD data were processed with Python-CTD \cite{Fernandes2014}, multi-dimensional data were handled using Xarray \cite{xarray2017}, data analysis were performed with NumPy \cite{numpy2020} and data visualization was made with Matplotlib \cite{Hunter2007Matplotlib}. All scripts used to reproduce the figures and analysis in this manuscript are available at \url{https://doi.org/10.5281/zenodo.12735814}.
+
+\acknowledgments
+We thank Petróleo Brasileiro S.A. (PETROBRAS) for their permission to use and display the proprietary data from Santos Project – Santos Basin Environmental Characterization – for this paper. The authors would like to thank all the organizations for making the dataset used in this research available and the School of Marine Science and Technology/University of Massachusetts Dartmouth (SMAST/UMassD) for their support during this research. Danilo A. Silva and Dalton K. Sasaki acknowledge financial support from PETROBRAS (Santos Project, 2018/00068-8), Marcelo Dottori acknowledges support from the Fundação de Amparo à Pesquisa do Estado de São Paulo (FAPESP 2010/05124-1) and Ilson Carlos Almeida da Silveira acknowledges support from CNPq (Project HIDROSAN I, 405593/2021-0) and FAPESP (Project HIDROSAN II, 2021/13124-6). We also thank the reviewers for their valuable suggestions and comments, which considerably improved the quality of this article.
+
+\section*{Conflict of Interest}
+
+The authors declare there are no conflicts of interest for this manuscript.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES and BIBLIOGRAPHY
+\bibliography{references}
+% \bibliography{<name of your .bib file>} don't specify the file extension
+% don't specify bibliographystyle
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
