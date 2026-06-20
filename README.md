@@ -7,16 +7,18 @@ This repository contains a collection of scripts, main figures and manuscript so
 The directory **scripts/** constains Jupyter Notebooks to reproduce all figures in the main manuscript and supplementary material (such as Figures S and Video). The codes depends on the data in the **data/**, which some of them may be downloaded using the scripts available on **scripts/download_dataset/**. 
 
 # Key Points
-
+- Salinity Maximum intrusions (Smax) in the South Brazil Bight are remotely advected preferentially from north.
+- Brazil Current interacting with Cabo Frio Eddy was the main mechanism advecting Smax towards the shelf and wind injected it into the shelf.
+- An enhancement by eddy dipole interaction and advection through a non-meandering Brazil Current are also identified as secondary processes.
 
 # Abstract
-
+Cross-shelf exchanges play a crucial role in distributing heat, salt, and biogeochemical properties between the continental shelf and the open ocean. Among the processes shaping these exchanges, the intrusion of warm and salty waters (mid-depth Salinity Maximum, Smax) remains poorly understood in the South Brazil Bight (SBB). We present observational evidence of Smax intrusions in the Northeastern SBB (NE-SBB) based on hydrographic observations collected between February and March 2022. Using a multi-platform observational dataset combined with Lagrangian particle tracking, we show that Smax originate north of the study region and were advected southward primarily by the Brazil Current (BC). Two dominant advective pathways are identified: (i) a southwestward along-shelf route associated with a non-meandering BC, and (ii) a cross-shelf pathway driven by the interaction between the BC meander and the cyclonic Cabo Frio Eddy that is intensified by the presence of an eddy dipole. Once Smax reaches the shelf break, its penetration onto the continental shelf is wind-driven, mid-depth onshore counterflow during upwelling-favorable conditions, as suggested by the Burger number analysis higher than 1. These results highlight a two-step mechanism for Smax intrusions in the NE-SBB, where mesoscale dynamics govern remote delivery to the shelf edge, while wind-driven circulation and stratification regulate onshore penetration and vertical structure. By elucidating the pathways and mechanisms of Smax intrusions, this study advances the understanding of cross-shelf exchanges in the SBB and emphasize the importance of remotely forced processes in shaping the thermodynamics and biogeochemistry of subtropical continental shelves.
 
 # Plain Language Summary
-
+In this study, we investigate how warm and salty subsurface waters, known as Salinity Maximum intrusions (Smax), reach the continental shelf in the South Brazil Bight (SBB). Using observations from February–March 2022 and numerical tracking of water parcels, we show that these waters originate north of the study region and are transported southward by the Brazil Current. Two main pathways are identified: a southwestward along-shelf route under a smooth Brazil Current regime, and a cross-shelf pathway driven by the interaction between the Brazil Current and a rotating ocean feature called the Cabo Frio Eddy, which can be intensified by interacting with another eddy rotating in the opposite direction. Once at the shelf edge, wind-driven currents during upwelling-favorable conditions promote subsurface onshore transport. Together, these results reveal a two-step mechanism in which mesoscale ocean features deliver salty waters to the shelf break, and wind-driven circulation carries them onto the continental shelf, with important implications for coastal stratification, nutrient supply, and marine productivity in the SBB.
 
 # Authors
-
+D. A. Silva, A. Gangopadhyay, D. K. Sasaki, M. Dottori, I. C. A. da Silveira, W. C. Belo, R. P. Martins
 
 # Acknowledgments
 
