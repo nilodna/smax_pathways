@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12735815.svg)](https://doi.org/10.5281/zenodo.12735815)
 
 
-This repository contains a collection of scripts, main figures and manuscript source code for the "Evidence of Synoptic Cross-shelf Pathways of Mid-depth Salinity Maximum Intrusions in the South Brazil Bight", by D. A. Silva et al (submitted to Journal of Geophysical Research: Oceans). 
+This repository contains a collection of scripts, main figures and manuscript source code for the "Evidence of Synoptic Cross-shelf Pathways of Mid-depth Salinity Maximum Intrusions in the South Brazil Bight", by D. A. Silva et al., 2026 ([Journal of Geophysical Research: Oceans](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JC023411)).
 
 The directory **scripts/** constains Jupyter Notebooks to reproduce all figures in the main manuscript and supplementary material (such as Figures S and Video). The codes depends on the data in the **data/**, which some of them may be downloaded using the scripts available on **scripts/download_dataset/**. 
 
